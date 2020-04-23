@@ -2,23 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="72c1ea27-e915-48ec-8c25-e9953ee245dc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/jamiexu/utils/convert/ConvertUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/jamiexu/utils/encryption/EncryptionUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/Utils/ConvertUtils/ConvertUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/Utils/ConvertUtils/ConvertUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/Utils/FileUtils/FileUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/Utils/FileUtils/FileUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/Utils/ConvertUtils/ConvertUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/Utils/EncodeUtils/EncodeUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/Utils/FileUtils/FileUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/Utils/HttpUtils/HttpResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/Utils/HttpUtils/HttpUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/Utils/HttpUtils/IHttpListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/Utils/ReflectUtils/ReflectUtils.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/jamiexu/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jamiexu/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jamiexu/Utils/ConvertUtils/ConvertUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jamiexu/Utils/FileUtils/FileUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jamiexu/utils/file/FileUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jamiexu/Utils/HttpUtils/HttpResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jamiexu/utils/http/HttpResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jamiexu/Utils/HttpUtils/HttpUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jamiexu/utils/http/HttpUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jamiexu/Utils/HttpUtils/IHttpListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jamiexu/utils/http/IHttpListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jamiexu/Utils/ReflectUtils/ReflectUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jamiexu/utils/reflect/ReflectUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/jamiexu/utils/convert/ConvertUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jamiexu/utils/convert/ConvertUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/jamiexu/utils/encryption/EncryptionUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jamiexu/utils/encryption/EncryptionUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/jamiexu/utils/http/HttpUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jamiexu/utils/http/HttpUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +80,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1587635410250</updated>
-      <workItem from="1587635413938" duration="8358000" />
+      <workItem from="1587635413938" duration="10558000" />
     </task>
     <servers />
   </component>
@@ -104,22 +100,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="739" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1587643023927" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1587643716176">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1587645754820">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587643716176" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1587643716175">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587645754820" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1587645754820">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587643716175" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1587643716175">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587645754820" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1587645754820">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587643716175" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1587643716176">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587645754820" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1587645754820">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587643716176" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587645754820" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1587638907536">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

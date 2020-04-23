@@ -11,9 +11,6 @@ import com.jamiexu.utils.encryption.EncryptionUtils;
 
 public class Main {
     public static void main(String[] args) {
-        byte[] con = "123".getBytes();
-        byte[] pass = "123".getBytes();
-        byte[] res = EncryptionUtils.enAes(con,pass,1);
-        System.out.println(ConvertUtils.bytesToBase64(res));
+        System.out.println(EncryptionUtils.deUnicode(EncryptionUtils.enUnicode("我是靓仔")));
     }
 }

@@ -1,12 +1,7 @@
 package com.jamiexu.utils.http;
 
 
-import java.io.BufferedReader;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
+import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.HashMap;
@@ -105,13 +100,13 @@ public class HttpUtils {
         return this;
     }
 
-    public HttpUtils setDownloadPath(String path){
+    public HttpUtils setDownloadPath(String path) {
         this.downloadPaht = path;
         return this;
     }
 
 
-    protected Object doInBackground(Object... strings) {
+    public void execute() {
         try {
             this.httpURLConnection = (HttpURLConnection) new URL(this.url).openConnection();
             this.httpURLConnection.setConnectTimeout(this.timeout);
@@ -136,7 +131,7 @@ public class HttpUtils {
 
 
             if (this.iHttpListener == null)
-                return null;
+                return;
 
             InputStream inputStream = null;
             String rCookie = "";
@@ -163,7 +158,7 @@ public class HttpUtils {
 
 
                 inputStream = this.httpURLConnection.getInputStream();
-                if(this.downloadPaht != null){
+                if (this.downloadPaht != null) {
 
                     fileOutputStream = new FileOutputStream(this.downloadPaht);
                     int len = -1;
@@ -171,23 +166,19 @@ public class HttpUtils {
                     while ((len = inputStream.read(byt, 0, byt.length)) != -1) {
                         fileOutputStream.write(byt, 0, len);
                     }
-                    return new HttpResponse(null, rHeader, rCookie, httpURLConnection.getResponseCode());
+                    this.iHttpListener.onComplete(new HttpResponse(null, rHeader, rCookie, httpURLConnection.getResponseCode()));
 
-                }else{
+                } else {
 
                     bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
                     StringBuilder stringBuilder = new StringBuilder();
                     String s = null;
-                    while ((s = bufferedReader.readLine())!=null){
+                    while ((s = bufferedReader.readLine()) != null) {
                         stringBuilder.append(s).append("\n");
                     }
-                    return new HttpResponse(stringBuilder.toString(), rHeader, rCookie, httpURLConnection.getResponseCode());
+                    this.iHttpListener.onComplete(new HttpResponse(stringBuilder.toString(), rHeader, rCookie, httpURLConnection.getResponseCode()));
 
                 }
-
-
-
-
 
 
             } catch (IOException e) {
@@ -202,12 +193,12 @@ public class HttpUtils {
                     }
                 }
 
-                if(fileOutputStream!=null){
+                if (fileOutputStream != null) {
                     fileOutputStream.flush();
                     fileOutputStream.close();
                 }
 
-                if(bufferedReader!=null){
+                if (bufferedReader != null) {
                     bufferedReader.close();
                 }
             }
@@ -215,20 +206,8 @@ public class HttpUtils {
         } catch (IOException e) {
             if (this.iHttpListener != null)
                 this.iHttpListener.onError(e);
-            return null;
         }
-        return null;
     }
 
 
-
-    protected void onPostExecute(Object s) {
-        if (s == null)
-            return;
-
-        if (this.iHttpListener != null)
-            this.iHttpListener.onComplete((HttpResponse) s);
-
-
-    }
 }
