@@ -1,4 +1,4 @@
-package com.jamiexu.Utils.HttpUtils;
+package com.jamiexu.utils.http;
 
 
 import java.io.BufferedReader;

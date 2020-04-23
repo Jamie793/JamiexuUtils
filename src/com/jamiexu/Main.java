@@ -1,15 +1,19 @@
 package com.jamiexu;
 
-import com.jamiexu.Utils.FileUtils.FileUtils;
+import com.jamiexu.utils.convert.ConvertUtils;
+import com.jamiexu.utils.encryption.EncryptionUtils;
 
-import java.util.Base64;
+/**
+ * @author Jamiexu or Jamie793
+ * @version 1.0
+ * 博客 blog.jamiexu.cn
+ */
 
 public class Main {
     public static void main(String[] args) {
-//        byte[] bytes = FileUtils.readFile("C:\\Users\\1\\Desktop\\青芒Cyanmango_Starkiller.apk");
-//        FileUtils.writeFile("C:\\Users\\1\\Desktop\\青芒Cyanmango_Starkillers.apk",bytes);
-//        FileUtils.copyFile("C:\\Users\\1\\Desktop\\青芒Cyanmango_Starkillers.apk","C:\\Users\\1\\Desktop\\青芒Cyanmango_Starkillersss.apk");
-//        System.out.println(FileUtils.getFileBase64("C:\\Users\\1\\Desktop\\青芒Cyanmango_Starkiller.apk"));
-        FileUtils.renameFile("C:\\Users\\1\\Desktop\\asss","asss.apk");
+        byte[] con = "123".getBytes();
+        byte[] pass = "123".getBytes();
+        byte[] res = EncryptionUtils.enAes(con,pass,1);
+        System.out.println(ConvertUtils.bytesToBase64(res));
     }
 }

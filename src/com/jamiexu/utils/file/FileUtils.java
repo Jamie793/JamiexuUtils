@@ -1,6 +1,6 @@
-package com.jamiexu.Utils.FileUtils;
+package com.jamiexu.utils.file;
 
-import com.jamiexu.Utils.ConvertUtils.ConvertUtils;
+import com.jamiexu.utils.convert.ConvertUtils;
 
 import java.io.*;
 import java.security.MessageDigest;
@@ -8,8 +8,20 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
 import java.util.zip.CRC32;
 
+/**
+ * @author Jamiexu or Jamie793
+ * @version 1.0
+ * 博客 blog.jamiexu.cn
+ */
+
 public class FileUtils {
 
+    /**
+     * 读取文本文件
+     *
+     * @param path 文件路径
+     * @return 文件内容
+     */
     public static String getString(String path) {
         FileReader fileReader = null;
         BufferedReader bufferedReader = null;
@@ -46,7 +58,12 @@ public class FileUtils {
         return stringBuilder.toString();
     }
 
-
+    /**
+     * 写出文本文件
+     *
+     * @param path    需要写出的文件路径
+     * @param content 需要写出的文件内容
+     */
     public static void putString(String path, String content) {
         FileWriter fileWriter = null;
         BufferedWriter bufferedWriter = null;
@@ -77,7 +94,12 @@ public class FileUtils {
         }
     }
 
-
+    /**
+     * 写出二进制文件
+     *
+     * @param path  需要写出文件的路径
+     * @param bytes 需要写出的内容
+     */
     public static void writeFile(String path, byte[] bytes) {
         DataOutputStream dataOutputStream = null;
         try {
@@ -99,7 +121,12 @@ public class FileUtils {
         }
     }
 
-
+    /**
+     * 读取二进制文件
+     *
+     * @param path 文件地址
+     * @return byte[] 文件内容
+     */
     public static byte[] readFile(String path) {
         DataInputStream dataInputStream = null;
         try {
@@ -123,7 +150,12 @@ public class FileUtils {
         return null;
     }
 
-
+    /**
+     * 复制文件
+     *
+     * @param from 源文件路径
+     * @param to   目标文件路径
+     */
     public static void copyFile(String from, String to) {
         FileInputStream fileInputStream = null;
         FileOutputStream fileOutputStream = null;
@@ -159,7 +191,11 @@ public class FileUtils {
         }
     }
 
-
+    /**
+     * 删除文件目录
+     *
+     * @param path 需要删除的文件目录路径
+     */
     public static void removeDirectory(String path) {
         File[] files = new File(path).listFiles();
         for (File f : files) {
@@ -173,7 +209,13 @@ public class FileUtils {
         new File(path).delete();
     }
 
-
+    /**
+     * 获取文件MD5
+     *
+     * @param path  文件路径
+     * @param upper 返回结果是否转换成大写
+     * @return String 16进制文本
+     */
     public static String getFileMd5(String path, boolean upper) {
         FileInputStream fileInputStream = null;
         try {
@@ -184,17 +226,20 @@ public class FileUtils {
             while ((len = fileInputStream.read(bytes, 0, bytes.length)) != -1) {
                 messageDigest.update(bytes, 0, len);
             }
-            String hex = ConvertUtils.bytesToHex(messageDigest.digest());
-            if (upper)
-                return hex.toUpperCase();
-            return hex;
+            return ConvertUtils.bytesToHex(messageDigest.digest(), upper);
         } catch (NoSuchAlgorithmException | IOException e) {
             e.printStackTrace();
         }
         return null;
     }
 
-
+    /**
+     * 获取文件Sha1
+     *
+     * @param path  文件路径
+     * @param upper 返回结果是否转换成大写
+     * @return String 16进制文本
+     */
     public static String getFileSha1(String path, boolean upper) {
         FileInputStream fileInputStream = null;
         try {
@@ -205,17 +250,20 @@ public class FileUtils {
             while ((len = fileInputStream.read(bytes, 0, bytes.length)) != -1) {
                 messageDigest.update(bytes, 0, len);
             }
-            String hex = ConvertUtils.bytesToHex(messageDigest.digest());
-            if (upper)
-                return hex.toUpperCase();
-            return hex;
+            return ConvertUtils.bytesToHex(messageDigest.digest(), upper);
         } catch (NoSuchAlgorithmException | IOException e) {
             e.printStackTrace();
         }
         return null;
     }
 
-
+    /**
+     * 获取文件Sha256
+     *
+     * @param path  文件路径
+     * @param upper 返回结果是否转换成大写
+     * @return String 16进制文本
+     */
     public static String getFileSha256(String path, boolean upper) {
         FileInputStream fileInputStream = null;
         try {
@@ -226,17 +274,19 @@ public class FileUtils {
             while ((len = fileInputStream.read(bytes, 0, bytes.length)) != -1) {
                 messageDigest.update(bytes, 0, len);
             }
-            String hex = ConvertUtils.bytesToHex(messageDigest.digest());
-            if (upper)
-                return hex.toUpperCase();
-            return hex;
+            return ConvertUtils.bytesToHex(messageDigest.digest(), upper);
         } catch (NoSuchAlgorithmException | IOException e) {
             e.printStackTrace();
         }
         return null;
     }
 
-
+    /**
+     * 获取文件CRC32
+     *
+     * @param path 文件路径
+     * @return Long
+     */
     public static Long getFileCrc32(String path) {
         FileInputStream fileInputStream = null;
         try {
@@ -254,28 +304,62 @@ public class FileUtils {
         return null;
     }
 
-
+    /**
+     * 获取文件Base64
+     *
+     * @param path 文件路径
+     * @return String Base64文本
+     */
     public static String getFileBase64(String path) {
         return Base64.getEncoder().encodeToString(readFile(path));
     }
 
-
+    /**
+     * 获取文件大小
+     *
+     * @param path 文件路径
+     * @return Long 文件大小以byte为单位
+     */
     public static long getFileSize(String path) {
         return new File(path).length();
     }
 
+    /**
+     * 获取文件名称
+     *
+     * @param path 文件路径
+     * @return String 文件名称
+     */
     public static String getFileName(String path) {
         return new File(path).getName();
     }
 
+    /**
+     * 获取文件父目录
+     *
+     * @param path 文件路径
+     * @return String 文件父目录路径
+     */
     public static String getFileParentPath(String path) {
         return new File(path).getParent();
     }
 
+    /**
+     * 移动文件
+     *
+     * @param from 源文件
+     * @param to   目标文件
+     */
     public static void moveFile(String from, String to) {
         new File(from).renameTo(new File(to));
     }
 
+    /**
+     * 重命名文件
+     *
+     * @param path 文件路径
+     * @param name 新文件名
+     */
     public static void renameFile(String path, String name) {
         File file = new File(path);
         file.renameTo(new File(file.getParent() + "/" + name));
