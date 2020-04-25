@@ -2,17 +2,18 @@ package com.jamiexu.utils.encryption;
 
 import com.jamiexu.utils.convert.ConvertUtils;
 
-import javax.crypto.*;
+import javax.crypto.Cipher;
+import javax.crypto.KeyGenerator;
+import javax.crypto.SecretKey;
+import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.DESKeySpec;
 import javax.crypto.spec.SecretKeySpec;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
-import java.security.InvalidKeyException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
-import java.security.spec.InvalidKeySpecException;
 import java.util.zip.CRC32;
 
 /**
@@ -26,21 +27,18 @@ public class EncryptionUtils {
      * Aes加解密
      *
      * @param bytes 需要加解密的数据
-     * @param salt  加解密密钥
+     * @param pass  加解密密钥
      * @param mode  1加密，2解密
      * @return byte[] 加密后的数据
      */
-    public static byte[] enAes(byte[] bytes, byte[] salt, int mode) {
+    public static byte[] enAes(byte[] bytes, byte[] pass, int mode) {
         try {
-            KeyGenerator kgen = KeyGenerator.getInstance("AES");// 创建AES的Key生产者
-            kgen.init(128, new SecureRandom(salt));// 利用用户密码作为随机数初始化出
-            SecretKey secretKey = kgen.generateKey();// 根据用户密码，生成一个密钥
-            byte[] enCodeFormat = secretKey.getEncoded();// 返回基本编码格式的密钥，如果此密钥不支持编码，则返回
-            SecretKeySpec key = new SecretKeySpec(enCodeFormat, "AES");// 转换为AES专用密钥
-            Cipher cipher = Cipher.getInstance("AES");// 创建密码器
-            cipher.init(mode, key);// 初始化为加密模式的密码器
-            return cipher.doFinal(bytes);// 加密
-        } catch (NoSuchAlgorithmException | IllegalBlockSizeException | NoSuchPaddingException | InvalidKeyException | BadPaddingException e) {
+            KeyGenerator keygen = KeyGenerator.getInstance("AES");
+            SecretKeySpec key = new SecretKeySpec(pass, "AES");
+            Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
+            cipher.init(mode, key);
+            return cipher.doFinal(bytes);
+        } catch (Throwable e) {
             e.printStackTrace();
         }
         return null;
@@ -51,20 +49,20 @@ public class EncryptionUtils {
      * Des加解密
      *
      * @param bytes 需要加解密的数据
-     * @param salt  加解密密钥
+     * @param pass  加解密密钥 必须要的倍数
      * @param mode  1加密，2解密
      * @return byte[] 加密后的数据
      */
-    public static byte[] enDes(byte[] bytes, byte[] salt, int mode) {
+    public static byte[] enDes(byte[] bytes, byte[] pass, int mode) {
         try {
             SecureRandom random = new SecureRandom();
-            DESKeySpec desKey = new DESKeySpec(salt);
+            DESKeySpec desKey = new DESKeySpec(pass);
             SecretKeyFactory keyFactory = SecretKeyFactory.getInstance("DES");
             SecretKey securekey = keyFactory.generateSecret(desKey);
-            Cipher cipher = Cipher.getInstance("DES/ECB/PKCS5Padding");
-            cipher.init(Cipher.DECRYPT_MODE, securekey, random);
-            return cipher.doFinal(bytes);
-        } catch (IllegalBlockSizeException | BadPaddingException | NoSuchPaddingException | NoSuchAlgorithmException | InvalidKeyException | InvalidKeySpecException e) {
+            Cipher cipher = Cipher.getInstance("DES");
+            cipher.init(mode, securekey, random);
+            return cipher.doFinal(bytes);// 加密
+        } catch (Throwable e) {
             e.printStackTrace();
         }
         return null;
@@ -165,6 +163,7 @@ public class EncryptionUtils {
 
     /**
      * 解码unicode
+     *
      * @param unicode 需要解码的内容
      * @return String 解码后的内容
      */
@@ -172,7 +171,7 @@ public class EncryptionUtils {
         String[] strs = unicode.split("\\\\u");
         StringBuilder stringBuilder = new StringBuilder();
         for (int i = 1; i < strs.length; i++) {
-            stringBuilder.append((char)Integer.valueOf(strs[i], 16).intValue());
+            stringBuilder.append((char) Integer.valueOf(strs[i], 16).intValue());
         }
         return stringBuilder.toString();
     }

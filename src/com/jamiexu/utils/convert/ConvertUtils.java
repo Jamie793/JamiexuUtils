@@ -70,6 +70,26 @@ public class ConvertUtils {
         return new String(bytes, 0, bytes.length);
     }
 
+    /**
+     * 16进制转Base64
+     *
+     * @param hex 十六进制的数据
+     * @return String base64文本
+     */
+    public static String hexToBase64(String hex) {
+        return bytesToBase64(hexToBytes(hex));
+    }
+
+    /**
+     * Base64转16进制
+     *
+     * @param base64 Base64文本
+     * @param upper  返回结果是否大写
+     * @return String 16进制
+     */
+    public static String base64ToHex(String base64, boolean upper) {
+        return bytesToHex(base64ToBytes(base64), upper);
+    }
 
 
 }
