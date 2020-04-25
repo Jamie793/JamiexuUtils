@@ -9,10 +9,10 @@
     <list default="true" id="72c1ea27-e915-48ec-8c25-e9953ee245dc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/file/ZipUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/file/ZipUtils.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/jamiexu/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jamiexu/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jamiexu/utils/convert/ConvertUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jamiexu/utils/convert/ConvertUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jamiexu/utils/encryption/EncryptionUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jamiexu/utils/encryption/EncryptionUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/jamiexu/utils/file/FileChannelUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jamiexu/utils/file/FileChannelUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/jamiexu/utils/file/FileUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jamiexu/utils/file/FileUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/jamiexu/utils/reflect/ReflectUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jamiexu/utils/reflect/ReflectUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +87,7 @@
       <updated>1587635410250</updated>
       <workItem from="1587635413938" duration="13749000" />
       <workItem from="1587680527074" duration="24251000" />
-      <workItem from="1587778781413" duration="6992000" />
+      <workItem from="1587778781413" duration="9656000" />
     </task>
     <servers />
   </component>
@@ -115,22 +115,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="739" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1587648999232" />
-    <state width="1877" height="306" key="GridCell.Tab.0.bottom" timestamp="1587788103288">
+    <state width="1877" height="306" key="GridCell.Tab.0.bottom" timestamp="1587793091095">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="306" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587788103288" />
-    <state width="1877" height="306" key="GridCell.Tab.0.center" timestamp="1587788103288">
+    <state width="1877" height="306" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587793091095" />
+    <state width="1877" height="306" key="GridCell.Tab.0.center" timestamp="1587793091095">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="306" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587788103288" />
-    <state width="1877" height="306" key="GridCell.Tab.0.left" timestamp="1587788103287">
+    <state width="1877" height="306" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587793091095" />
+    <state width="1877" height="306" key="GridCell.Tab.0.left" timestamp="1587793091095">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="306" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587788103287" />
-    <state width="1877" height="306" key="GridCell.Tab.0.right" timestamp="1587788103288">
+    <state width="1877" height="306" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587793091095" />
+    <state width="1877" height="306" key="GridCell.Tab.0.right" timestamp="1587793091095">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="306" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587788103288" />
+    <state width="1877" height="306" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587793091095" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1587787302319">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

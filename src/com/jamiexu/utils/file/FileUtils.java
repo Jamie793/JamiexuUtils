@@ -365,5 +365,49 @@ public class FileUtils {
         file.renameTo(new File(file.getParent() + "/" + name));
     }
 
+    /**
+     * 验证文件md5
+     *
+     * @param path 文件路径
+     * @param md5  md5值大小写都行
+     * @return boolean 返回布尔值
+     */
+    public static boolean checkFileMd5(String path, String md5) {
+        return getFileMd5(path, true).equals(md5.toUpperCase());
+    }
+
+    /**
+     * 验证文件sha1
+     *
+     * @param path 文件路径
+     * @param sha1 sha1
+     * @return boolean 返回布尔值
+     */
+    public static boolean checkFileSha1(String path, String sha1) {
+        return getFileSha1(path, true).equals(sha1.toUpperCase());
+    }
+
+    /**
+     * 验证文件crc32
+     *
+     * @param path  文件路径
+     * @param crc32 crc32
+     * @return boolean 返回布尔值
+     */
+    public static boolean checkFileCrc32(String path, long crc32) {
+        return getFileCrc32(path) == crc32;
+    }
+
+    /**
+     * 验证文件sha256
+     *
+     * @param path 文件路径
+     * @param sha256 sha256
+     * @return boolean 返回布尔值
+     */
+    public static boolean checkFileSha256(String path, String sha256) {
+        return getFileSha256(path, true).equals(sha256.toUpperCase());
+    }
+
 
 }

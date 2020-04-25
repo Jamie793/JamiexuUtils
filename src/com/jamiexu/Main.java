@@ -5,6 +5,9 @@ import com.jamiexu.utils.encryption.EncryptionUtils;
 import com.jamiexu.utils.file.FileChannelUtils;
 import com.jamiexu.utils.file.FileUtils;
 import com.jamiexu.utils.file.ZipUtils;
+import com.jamiexu.utils.http.HttpResponse;
+import com.jamiexu.utils.http.HttpUtils;
+import com.jamiexu.utils.http.IHttpListener;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -22,10 +25,18 @@ import java.util.Objects;
 
 public class Main {
     public static void main(String[] args) {
-        byte[] bytes = "12546546456353".getBytes();
-        byte[] pass = "1234567811111111".getBytes();
-        byte[] en = EncryptionUtils.enAes(bytes,pass,1);
-        System.out.println(ConvertUtils.bytesToHex(en,false));
-        System.out.println(ConvertUtils.bytesToString(EncryptionUtils.enAes(en,pass,2)));
+        HttpUtils httpUtils = new HttpUtils("https://www.baidu.com");
+        httpUtils.setHttpListener(new IHttpListener() {
+            @Override
+            public void onComplete(HttpResponse httpResponse) {
+                System.out.println();
+            }
+
+            @Override
+            public void onError(Exception error) {
+
+            }
+        });
+        httpUtils.execute();;
     }
 }

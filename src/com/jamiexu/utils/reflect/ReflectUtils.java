@@ -15,6 +15,20 @@ import java.lang.reflect.Method;
 public class ReflectUtils {
 
     /**
+     * 获取Class
+     * @param className 类名
+     * @return Class<?> Class
+     */
+    public static Class<?> forName(String className){
+        try {
+            return Class.forName(className);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    /**
      * 获取Class构造器
      *
      * @param clas 需要获取构造器的Class类
