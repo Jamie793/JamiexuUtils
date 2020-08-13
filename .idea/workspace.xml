@@ -2,17 +2,54 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="JamiexuUtils:jar" />
+      <artifact name="JamiexuUtils" />
     </artifacts-to-build>
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72c1ea27-e915-48ec-8c25-e9953ee245dc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/org/json/JSON.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/json/JSONArray.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/json/JSONException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/json/JSONObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/json/JSONStringer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/json/JSONTokener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/JamiexuUtils_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/JamiexuUtils.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/JamiexuUtils_jar/JamiexuUtils.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JamiexuUtils/META-INF/JamiexuUtils.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/Main$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/convert/ConvertUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/convert/ConvertUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/encryption/EncryptionUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/encryption/EncryptionUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/file/FileChannelUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/file/FileChannelUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/file/FileUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/file/FileUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/file/ZipUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/file/ZipUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/http/HttpResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/http/HttpResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/http/HttpUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/http/HttpUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/http/IHttpListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/http/IHttpListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/reflect/ReflectUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/reflect/ReflectUtils.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/jamiexu/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jamiexu/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jamiexu/utils/file/FileChannelUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jamiexu/utils/file/FileChannelUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jamiexu/utils/file/FileUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jamiexu/utils/file/FileUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jamiexu/utils/reflect/ReflectUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jamiexu/utils/reflect/ReflectUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/jamiexu/utils/encryption/EncryptionUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jamiexu/utils/encryption/EncryptionUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/jamiexu/utils/http/HttpUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jamiexu/utils/http/HttpUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,10 +77,12 @@
     <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
     <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="jamiexuutils" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -54,6 +93,11 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="File.Encoding" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Programing\Idea\JamiexuUtils\src" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -87,77 +131,41 @@
       <updated>1587635410250</updated>
       <workItem from="1587635413938" duration="13749000" />
       <workItem from="1587680527074" duration="24251000" />
-      <workItem from="1587778781413" duration="9656000" />
+      <workItem from="1587778781413" duration="11182000" />
+      <workItem from="1587877440584" duration="4883000" />
+      <workItem from="1587989165143" duration="603000" />
+      <workItem from="1588159003915" duration="58000" />
+      <workItem from="1595152352366" duration="329000" />
+      <workItem from="1595152978457" duration="1221000" />
+      <workItem from="1597205672235" duration="95000" />
+      <workItem from="1597206441227" duration="718000" />
+      <workItem from="1597322541465" duration="4156000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="552" y="178" key="#Notifications" timestamp="1587637634371">
+    <state x="739" y="275" key="FileChooserDialogImpl" timestamp="1597205676535">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="178" key="#Notifications/0.0.1920.1040@0.0.1920.1040" timestamp="1587637634371" />
-    <state x="552" y="178" key="#Project_Structure" timestamp="1587649110817">
+    <state x="739" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1597205676535" />
+    <state x="461" y="162" key="SettingsEditor" timestamp="1595154199102">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="178" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1587649110817" />
-    <state x="690" y="303" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1587649208372">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="690" y="303" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587649208372" />
-    <state x="703" y="252" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1587648948010">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="703" y="252" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040@0.0.1920.1040" timestamp="1587648948010" />
-    <state x="739" y="275" key="FileChooserDialogImpl" timestamp="1587648999232">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="739" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1587648999232" />
-    <state width="1877" height="306" key="GridCell.Tab.0.bottom" timestamp="1587793091095">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="306" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587793091095" />
-    <state width="1877" height="306" key="GridCell.Tab.0.center" timestamp="1587793091095">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="306" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587793091095" />
-    <state width="1877" height="306" key="GridCell.Tab.0.left" timestamp="1587793091095">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="306" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587793091095" />
-    <state width="1877" height="306" key="GridCell.Tab.0.right" timestamp="1587793091095">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="306" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587793091095" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1587787302319">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587787302319" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1587787302319">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587787302319" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1587787302319">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587787302319" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1587787302319">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587787302319" />
-    <state x="461" y="162" key="SettingsEditor" timestamp="1587649223510">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1587649223510" />
-    <state x="809" y="523" key="extract.method.dialog" timestamp="1587709106639">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="809" y="523" key="extract.method.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587709106639" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1587638077409">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1587638077409" />
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1595154199102" />
   </component>
 </project>

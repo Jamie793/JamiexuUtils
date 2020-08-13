@@ -1,13 +1,13 @@
 package com.jamiexu.utils.encryption;
 
 import com.jamiexu.utils.convert.ConvertUtils;
-
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.DESKeySpec;
 import javax.crypto.spec.SecretKeySpec;
+import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
@@ -76,10 +76,10 @@ public class EncryptionUtils {
      * @param mode    编码解码 1编码，2解码
      * @return
      */
-    public static String enUrl(String content, int mode) {
+    public static String enUrl(String content, int mode) throws UnsupportedEncodingException {
         if (mode == 1)
-            return URLEncoder.encode(content, StandardCharsets.UTF_8);
-        return URLDecoder.decode(content, StandardCharsets.UTF_8);
+            return URLEncoder.encode(content, "utf-8");
+        return URLDecoder.decode(content, "utf-8");
     }
 
     /**

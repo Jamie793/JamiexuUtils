@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="JamiexuUtils:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/JamiexuUtils_jar</output-path>
+  <artifact type="jar" name="JamiexuUtils">
+    <output-path>$PROJECT_DIR$/out/artifacts/JamiexuUtils</output-path>
     <root id="archive" name="JamiexuUtils.jar">
       <element id="module-output" name="JamiexuUtils" />
     </root>
