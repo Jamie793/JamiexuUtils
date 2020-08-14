@@ -18,7 +18,7 @@ import java.util.zip.GZIPInputStream;
 /**
  * @author Jamiexu or Jamie793
  * @version 3.0
- * blog；blog.jamiexu.cn
+ * blog: blog.jamiexu.cn
  */
 
 public class HttpUtils {

@@ -25,8 +25,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72c1ea27-e915-48ec-8c25-e9953ee245dc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jamiexu/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jamiexu/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/jamiexu/utils/http/HttpUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jamiexu/utils/http/HttpUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -119,7 +117,7 @@
       <workItem from="1597205672235" duration="95000" />
       <workItem from="1597206441227" duration="718000" />
       <workItem from="1597322541465" duration="7845000" />
-      <workItem from="1597369359377" duration="10375000" />
+      <workItem from="1597369359377" duration="10658000" />
     </task>
     <servers />
   </component>
@@ -139,26 +137,30 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="706" y="259" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1597379900646">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="706" y="259" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040@0.0.1920.1040" timestamp="1597379900646" />
     <state x="739" y="275" key="FileChooserDialogImpl" timestamp="1597205676535">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="739" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1597205676535" />
-    <state width="1877" height="277" key="GridCell.Tab.0.bottom" timestamp="1597379732489">
+    <state width="1877" height="277" key="GridCell.Tab.0.bottom" timestamp="1597379945858">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="277" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1597379732489" />
-    <state width="1877" height="277" key="GridCell.Tab.0.center" timestamp="1597379732489">
+    <state width="1877" height="277" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1597379945858" />
+    <state width="1877" height="277" key="GridCell.Tab.0.center" timestamp="1597379945858">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="277" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1597379732489" />
-    <state width="1877" height="277" key="GridCell.Tab.0.left" timestamp="1597379732489">
+    <state width="1877" height="277" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1597379945858" />
+    <state width="1877" height="277" key="GridCell.Tab.0.left" timestamp="1597379945858">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="277" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1597379732489" />
-    <state width="1877" height="277" key="GridCell.Tab.0.right" timestamp="1597379732489">
+    <state width="1877" height="277" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1597379945858" />
+    <state width="1877" height="277" key="GridCell.Tab.0.right" timestamp="1597379945858">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="277" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1597379732489" />
+    <state width="1877" height="277" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1597379945858" />
     <state x="461" y="162" key="SettingsEditor" timestamp="1595154199102">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
