@@ -1,5 +1,7 @@
 package com.jamiexu.utils.file;
 
+import com.sun.xml.internal.messaging.saaj.util.ByteOutputStream;
+
 import java.io.*;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
@@ -18,8 +20,9 @@ public class ZipUtils {
      * @param path 文件或文件夹路径
      * @param to   导出zip的路径
      * @param is   是否把当前目录一起压缩进压缩包里
+     * @return boolean 是否压缩成功
      */
-    public static void zip(String path, String to, boolean is) {
+    public static boolean zip(String path, String to, boolean is) {
         ZipOutputStream zipOutputStream = null;
         FileOutputStream fileOutputStream = null;
         try {
@@ -29,6 +32,7 @@ public class ZipUtils {
                 zip(new File(path), zipOutputStream, new File(path).getName() + "/");
             else
                 zip(new File(path), zipOutputStream, "");
+            return true;
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } finally {
@@ -50,6 +54,7 @@ public class ZipUtils {
                 }
             }
         }
+        return false;
     }
 
 
@@ -102,8 +107,9 @@ public class ZipUtils {
      *
      * @param zipPath zip路径
      * @param desPath 解压路径
+     * @return boolean 是否解压成功
      */
-    public static void unZip(String zipPath, String desPath) {
+    public static boolean unZip(String zipPath, String desPath) {
         ZipInputStream zipInputStream = null;
         File f = new File(desPath);
         f.delete();
@@ -125,9 +131,11 @@ public class ZipUtils {
                     fileOutputStream.close();
                 }
             }
+            return true;
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return false;
     }
 
 
@@ -135,12 +143,15 @@ public class ZipUtils {
      * 提取压缩包的某个文件
      *
      * @param zipPath     zip路径
-     * @param desPath     解压路径
+     * @param desPath     解压文件路径
      * @param zipFilePath zip文件中的路径 目录和文件之间用/
+     * @return boolean 是否提取成功
      */
-    public static void extraceFile(String zipPath, String desPath, String zipFilePath) {
+    public static boolean extraceFile(String zipPath, String desPath, String zipFilePath) {
         ZipInputStream zipInputStream = null;
         FileOutputStream fileOutputStream = null;
+        if (zipFilePath.startsWith("/") || zipFilePath.startsWith("\\"))
+            zipFilePath = zipFilePath.substring(1);
         try {
             zipInputStream = new ZipInputStream(new FileInputStream(zipPath));
             ZipEntry zipEntry;
@@ -155,6 +166,7 @@ public class ZipUtils {
                     break;
                 }
             }
+            return true;
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
@@ -176,19 +188,140 @@ public class ZipUtils {
                 }
             }
         }
+        return false;
     }
 
 
     /**
-     * 提取压缩包的某个文文件夹或文件
+     * 提取压缩包的某个文件返回byte[]
+     *
+     * @param zipPath     zip路径
+     * @param zipFilePath zip文件中的路径 目录和文件之间用/
+     * @return byte[] 文件byte[]数组
+     */
+    public static boolean extraceFileBytes(String zipPath, String zipFilePath) {
+        ZipInputStream zipInputStream = null;
+        ByteOutputStream byteOutputStream = null;
+        if (zipFilePath.startsWith("/") || zipFilePath.startsWith("\\"))
+            zipFilePath = zipFilePath.substring(1);
+        try {
+            zipInputStream = new ZipInputStream(new FileInputStream(zipPath));
+            ZipEntry zipEntry;
+            while ((zipEntry = zipInputStream.getNextEntry()) != null) {
+                if (zipEntry.getName().replace("//", "/").equals(zipFilePath)) {
+                    byteOutputStream = new ByteOutputStream();
+                    byte[] bytes = new byte[1024 * 8];
+                    int len;
+                    while ((len = zipInputStream.read(bytes, 0, bytes.length)) != -1) {
+                        byteOutputStream.write(bytes, 0, bytes.length);
+                    }
+                    break;
+                }
+            }
+            return true;
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (byteOutputStream != null) {
+                try {
+                    byteOutputStream.flush();
+                    byteOutputStream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            if (zipInputStream != null) {
+                try {
+                    zipInputStream.closeEntry();
+                    zipInputStream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return false;
+    }
+
+
+    /**
+     * 提取压缩包的某个文文件夹，不会创建目录
      *
      * @param zipPath    zip路径
      * @param desPath    解压路径
      * @param zipDirPath zip文件中的目录路径 目录和文件之间用/
+     * @return boolean 是否提取成功
      */
-    public static void extraceFileDir(String zipPath, String desPath, String zipDirPath) {
+    public static boolean extraceDir(String zipPath, String desPath, String zipDirPath) {
         ZipInputStream zipInputStream = null;
         FileOutputStream fileOutputStream = null;
+
+        if (zipDirPath.startsWith("/") || zipDirPath.startsWith("\\"))
+            zipDirPath = zipDirPath.substring(1);
+
+        File file = new File(desPath);
+        if (!file.exists()) file.mkdirs();
+        try {
+            zipInputStream = new ZipInputStream(new FileInputStream(zipPath));
+            ZipEntry zipEntry;
+            while ((zipEntry = zipInputStream.getNextEntry()) != null) {
+                if (zipEntry.getName().replace("//", "/").contains(zipDirPath)) {
+//                    System.out.println(zipEntry.getName());
+                    String name = zipEntry.getName();
+                    name = name.substring(name.lastIndexOf("/"));
+//                    System.out.println(name);
+                    File file1 = new File(desPath, name);
+                    fileOutputStream = new FileOutputStream(file1);
+                    byte[] bytes = new byte[1024 * 8];
+                    int len;
+                    while ((len = zipInputStream.read(bytes, 0, bytes.length)) != -1) {
+                        fileOutputStream.write(bytes, 0, len);
+                    }
+                    fileOutputStream.flush();
+                    fileOutputStream.close();
+                }
+            }
+            return true;
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (fileOutputStream != null) {
+                try {
+                    fileOutputStream.flush();
+                    fileOutputStream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            if (zipInputStream != null) {
+                try {
+                    zipInputStream.closeEntry();
+                    zipInputStream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return false;
+    }
+
+
+    /**
+     * 提取压缩包的某个文文件夹，会自动创建目录
+     *
+     * @param zipPath    zip路径
+     * @param desPath    解压路径
+     * @param zipDirPath zip文件中的目录路径 目录和文件之间用/
+     * @return boolean 是否提取成功
+     */
+    public static boolean extraceDirs(String zipPath, String desPath, String zipDirPath) {
+        ZipInputStream zipInputStream = null;
+        FileOutputStream fileOutputStream = null;
+
+        if (zipDirPath.startsWith("/") || zipDirPath.startsWith("\\"))
+            zipDirPath = zipDirPath.substring(1);
+
         File file = new File(desPath);
         if (!file.exists()) file.mkdirs();
         try {
@@ -212,6 +345,7 @@ public class ZipUtils {
                     }
                 }
             }
+            return true;
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
@@ -233,6 +367,7 @@ public class ZipUtils {
                 }
             }
         }
+        return false;
     }
 
 

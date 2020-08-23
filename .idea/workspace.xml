@@ -25,7 +25,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72c1ea27-e915-48ec-8c25-e9953ee245dc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/com/jamiexu/utils/http/HttpUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jamiexu/utils/http/HttpUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/JamiexuUtils/JamiexuUtils.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/JamiexuUtils/JamiexuUtils.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/Main$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/file/FileChannelUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/file/FileChannelUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/file/ZipUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/file/ZipUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/reflect/ReflectUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/reflect/ReflectUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/jamiexu/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jamiexu/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/jamiexu/utils/file/FileChannelUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jamiexu/utils/file/FileChannelUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/jamiexu/utils/file/ZipUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jamiexu/utils/file/ZipUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/jamiexu/utils/reflect/ReflectUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jamiexu/utils/reflect/ReflectUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +68,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="D:/AndroidNX/dex2jar/classes-dex2jar.jar!/" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -66,10 +76,10 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Artifacts" />
-    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15625" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -117,7 +127,17 @@
       <workItem from="1597205672235" duration="95000" />
       <workItem from="1597206441227" duration="718000" />
       <workItem from="1597322541465" duration="7845000" />
-      <workItem from="1597369359377" duration="10658000" />
+      <workItem from="1597369359377" duration="20423000" />
+      <workItem from="1597459425751" duration="1232000" />
+      <workItem from="1597476889470" duration="39000" />
+      <workItem from="1597477063588" duration="25000" />
+      <workItem from="1597477116603" duration="233000" />
+      <workItem from="1597477377026" duration="30000" />
+      <workItem from="1597477425594" duration="9000" />
+      <workItem from="1597477456536" duration="3058000" />
+      <workItem from="1597514755948" duration="3236000" />
+      <workItem from="1598105545956" duration="4477000" />
+      <workItem from="1598146914657" duration="1033000" />
     </task>
     <servers />
   </component>
@@ -137,34 +157,52 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="706" y="259" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1597379900646">
+    <state x="736" y="413" width="447" height="221" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1597408858863">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="706" y="259" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040@0.0.1920.1040" timestamp="1597379900646" />
-    <state x="739" y="275" key="FileChooserDialogImpl" timestamp="1597205676535">
+    <state x="736" y="413" width="447" height="221" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040@0.0.1920.1040" timestamp="1597408858863" />
+    <state x="706" y="259" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1597380038120">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="739" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1597205676535" />
-    <state width="1877" height="277" key="GridCell.Tab.0.bottom" timestamp="1597379945858">
+    <state x="706" y="259" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040@0.0.1920.1040" timestamp="1597380038120" />
+    <state x="739" y="275" key="FileChooserDialogImpl" timestamp="1598147034277">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="277" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1597379945858" />
-    <state width="1877" height="277" key="GridCell.Tab.0.center" timestamp="1597379945858">
+    <state x="739" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1598147034277" />
+    <state x="739" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1597517382394" />
+    <state width="1877" height="198" key="GridCell.Tab.0.bottom" timestamp="1598147393489">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="277" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1597379945858" />
-    <state width="1877" height="277" key="GridCell.Tab.0.left" timestamp="1597379945858">
+    <state width="1877" height="198" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1598147393489" />
+    <state width="1877" height="277" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1597518922605" />
+    <state width="1877" height="198" key="GridCell.Tab.0.center" timestamp="1598147393489">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="277" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1597379945858" />
-    <state width="1877" height="277" key="GridCell.Tab.0.right" timestamp="1597379945858">
+    <state width="1877" height="198" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1598147393489" />
+    <state width="1877" height="277" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1597518922605" />
+    <state width="1877" height="198" key="GridCell.Tab.0.left" timestamp="1598147393488">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="277" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1597379945858" />
-    <state x="461" y="162" key="SettingsEditor" timestamp="1595154199102">
+    <state width="1877" height="198" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1598147393488" />
+    <state width="1877" height="277" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1597518922605" />
+    <state width="1877" height="198" key="GridCell.Tab.0.right" timestamp="1598147393489">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1595154199102" />
+    <state width="1877" height="198" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1598147393489" />
+    <state width="1877" height="277" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1597518922605" />
+    <state x="461" y="162" key="SettingsEditor" timestamp="1598147432051">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1598147432051" />
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1597517353955" />
+    <state x="334" y="130" key="new project wizard" timestamp="1597517400497">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="334" y="130" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1597517400497" />
+    <state x="721" y="391" width="618" height="282" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1598146992880">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="721" y="391" width="618" height="282" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1598146992880" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1597371973942">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

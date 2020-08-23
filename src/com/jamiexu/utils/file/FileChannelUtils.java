@@ -124,9 +124,12 @@ public class FileChannelUtils {
         FileChannel fileChannel1 = null;
         try {
             fileChannel = FileChannel.open(Paths.get(from), StandardOpenOption.READ);
-            fileChannel1 = FileChannel.open(Paths.get(to), StandardOpenOption.READ, StandardOpenOption.WRITE, StandardOpenOption.CREATE);
-            MappedByteBuffer mappedByteBuffer = fileChannel.map(FileChannel.MapMode.READ_ONLY, 0, fileChannel.size());
-            MappedByteBuffer mappedByteBuffer1 = fileChannel1.map(FileChannel.MapMode.READ_WRITE, 0, fileChannel.size());
+            fileChannel1 = FileChannel.open(Paths.get(to), StandardOpenOption.READ, StandardOpenOption.WRITE,
+                    StandardOpenOption.CREATE);
+            MappedByteBuffer mappedByteBuffer = fileChannel.map(FileChannel.MapMode.READ_ONLY, 0,
+                    fileChannel.size());
+            MappedByteBuffer mappedByteBuffer1 = fileChannel1.map(FileChannel.MapMode.READ_WRITE, 0,
+                    fileChannel.size());
             byte[] bytes = new byte[mappedByteBuffer.limit()];
             mappedByteBuffer.get(bytes);
             mappedByteBuffer1.put(bytes);
@@ -148,6 +151,7 @@ public class FileChannelUtils {
                     e.printStackTrace();
                 }
             }
+
         }
 
     }
