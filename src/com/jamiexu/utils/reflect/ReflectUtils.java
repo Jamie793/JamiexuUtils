@@ -5,6 +5,7 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.Objects;
 
 /**
  * @author Jamiexu or Jamie793
@@ -16,10 +17,11 @@ public class ReflectUtils {
 
     /**
      * 获取Class
+     *
      * @param className 类名
      * @return Class<?> Class
      */
-    public static Class<?> forName(String className){
+    public static Class<?> forName(String className) {
         try {
             return Class.forName(className);
         } catch (ClassNotFoundException e) {
@@ -35,7 +37,7 @@ public class ReflectUtils {
      * @param objs 构造器参数class
      * @return Constructor 构造器
      */
-    public static Constructor getConstructor(Class<?> clas, Class<?>... objs) {
+    public static  Constructor<?> getConstructor(Class<?> clas, Class<?>... objs) {
         try {
             return clas.getDeclaredConstructor(objs);
         } catch (NoSuchMethodException e) {
@@ -50,7 +52,7 @@ public class ReflectUtils {
      * @param clas 需要获取构造器的Class类
      * @return Constructor 构造器
      */
-    public static Constructor getConstructor(Class<?> clas) {
+    public static Constructor<?> getConstructor(Class<?> clas) {
         try {
             return clas.getDeclaredConstructor();
         } catch (NoSuchMethodException e) {
@@ -65,9 +67,10 @@ public class ReflectUtils {
      * @param clas 需要获取构造器的Class类
      * @return Constructor[] 构造器数组
      */
-    public static Constructor[] getAllConstructors(Class<?> clas) {
+    public static Constructor<?>[] getAllConstructors(Class<?> clas) {
         return clas.getDeclaredConstructors();
     }
+
 
     /**
      * 实现接口
@@ -76,32 +79,8 @@ public class ReflectUtils {
      * @param objects     参数
      * @return Object 对应的Class接口
      */
-    public static Object newInstance(Constructor constructor, Object... objects) {
+    public static Object newInstance(Constructor<?> constructor, Object... objects) {
         try {
-            return constructor.newInstance(objects);
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
-    /**
-     * 实现接口
-     *
-     * @param clas    需要实现接口的Class类
-     * @param objects 参数
-     * @return Object 对应的Class接口
-     */
-    public static Object newInstance(Class<?> clas, Object... objects) {
-        try {
-            Constructor constructor = getConstructor(clas);
-            if (constructor == null)
-                return null;
-            constructor.setAccessible(true);
             return constructor.newInstance(objects);
         } catch (IllegalAccessException | InstantiationException | InvocationTargetException e) {
             e.printStackTrace();
@@ -109,13 +88,14 @@ public class ReflectUtils {
         return null;
     }
 
+
     /**
      * 实现接口
      *
      * @param constructor 构造器
      * @return Object 对应的Class接口
      */
-    public static Object newInstance(Constructor constructor) {
+    public static Object newInstance(Constructor<?> constructor) {
         try {
             return constructor.newInstance();
         } catch (IllegalAccessException | InstantiationException | InvocationTargetException e) {
@@ -132,20 +112,17 @@ public class ReflectUtils {
      */
     public static Object newInstance(Class<?> clas) {
         try {
-            Constructor constructor = getConstructor(clas);
+            Constructor<?> constructor = getConstructor(clas);
             if (constructor == null)
                 return null;
             constructor.setAccessible(true);
             return constructor.newInstance();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
+        } catch (IllegalAccessException | InstantiationException | InvocationTargetException e) {
             e.printStackTrace();
         }
         return null;
     }
+
 
     /**
      * 获取方法
@@ -191,82 +168,16 @@ public class ReflectUtils {
     }
 
     /**
-     * 调用方法
-     *
-     * @param clas    class类
-     * @param object  Context
-     * @param name    方法名
-     * @param params  方法参数Class
-     * @param objects 参数
-     * @return Object 调用结果
-     */
-    public static Object invokeMethod(Class<?> clas, Object object, String name, Class<?> params, Object... objects) {
-        try {
-            Method method = getMethod(clas, name, params);
-            if (method == null)
-                return null;
-            method.setAccessible(true);
-            return method.invoke(object, objects);
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
-    /**
-     * 调用方法
+     * 调用对象方法
      *
      * @param method 方法
+     * @param obj    对象
      * @return Object 返回结果
      */
-    public static Object invokeMethod(Method method) {
+    public static Object invokeMethod(Method method, Object obj) {
         try {
             method.setAccessible(true);
-            return method.invoke(null);
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
-    /**
-     * 调用方法
-     *
-     * @param method  方法
-     * @param objects 参数
-     * @return Object 返回结果
-     */
-    public static Object invokeMethod(Method method, Object... objects) {
-        try {
-            method.setAccessible(true);
-            return method.invoke(null, objects);
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
-    /**
-     * 调用方法
-     *
-     * @param clas   class
-     * @param object context
-     * @param name   方法名
-     * @return Object 返回结果
-     */
-    public static Object invokeMethod(Class<?> clas, Object object, String name) {
-        try {
-            Method method = getMethod(clas, name);
-            if (method == null)
-                return null;
-            method.setAccessible(true);
-            return method.invoke(object);
+            return method.invoke(obj);
         } catch (IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
         }
@@ -274,51 +185,42 @@ public class ReflectUtils {
     }
 
     /**
-     * 调用静态方法
+     * 调用对象方法
      *
-     * @param clas    被调用方法的class
-     * @param name    方法的名称
-     * @param params  方法需要传入的参数
-     * @param objects 传入的参数
-     * @return Object 调用结果
+     * @param method  方法
+     * @param obj     对象
+     * @param objects 参数
+     * @return Object 返回结果
      */
-    public static Object invokeStaticMethod(Class<?> clas, String name, Class<?> params, Object... objects) {
+    public static Object invokeMethod(Method method, Object obj, Object... objects) {
         try {
-            Method method = getMethod(clas, name, params);
-            if (method == null)
-                return null;
             method.setAccessible(true);
-            return method.invoke(null, objects);
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
+            return method.invoke(obj, objects);
+        } catch (IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
         }
         return null;
     }
 
     /**
-     * 调用静态方法
+     * 调用对象方法
      *
-     * @param clas 被调用方法的class
-     * @param name 方法名称
-     * @return Object 调用结果
+     * @param clas   class类
+     * @param name   方法名
+     * @param object 对象
+     * @return Object 返回结果
      */
-    public static Object invokeStaticMethod(Class<?> clas, String name) {
+    public static Object invokeMethod(Class<?> clas, String name, Object object) {
         try {
             Method method = getMethod(clas, name);
-            if (method == null)
-                return null;
-            method.setAccessible(true);
-            return method.invoke(null);
-        } catch (IllegalAccessException e) {
+            Objects.requireNonNull(method).setAccessible(true);
+            return method.invoke(object);
+        } catch (IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
-
         }
         return null;
     }
+
 
     /**
      * 调用静态方法
@@ -331,9 +233,7 @@ public class ReflectUtils {
         try {
             method.setAccessible(true);
             return method.invoke(null, objects);
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
+        } catch (IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
         }
         return null;
@@ -349,9 +249,26 @@ public class ReflectUtils {
         try {
             method.setAccessible(true);
             return method.invoke(null);
-        } catch (IllegalAccessException e) {
+        } catch (IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
-        } catch (InvocationTargetException e) {
+        }
+        return null;
+    }
+
+    /**
+     * 调用静态方法
+     *
+     * @param clas 被调用的方法
+     * @param name 方法名
+     * @return Object 调用结果
+     */
+    public static Object invokeStaticMethod(Class<?> clas, String name) {
+        try {
+            Method method = getMethod(clas,name);
+            assert method != null;
+            method.setAccessible(true);
+            return method.invoke(null);
+        } catch (IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
         }
         return null;
@@ -383,6 +300,7 @@ public class ReflectUtils {
         return clas.getDeclaredFields();
     }
 
+
     /**
      * 获取字段值
      *
@@ -391,7 +309,7 @@ public class ReflectUtils {
      * @param name   字段名
      * @return Object 获取结果
      */
-    public static Object getField(Class<?> clas, Object object, String name) {
+    public static Object getFieldValue(Class<?> clas, Object object, String name) {
         try {
             Field field = getField(clas, name);
             if (field == null)
@@ -463,15 +381,15 @@ public class ReflectUtils {
         }
     }
 
+
     /**
      * 获取字段值
      *
      * @param field  字段
      * @param object 上下文
-     * @param name   字段名
      * @return Object 字段值
      */
-    public static Object getFieldValue(Field field, Object object, String name) {
+    public static Object getFieldValue(Field field, Object object) {
         try {
             field.setAccessible(true);
             return field.get(object);
@@ -486,10 +404,9 @@ public class ReflectUtils {
      *
      * @param field  字段
      * @param obj    上下文
-     * @param name   字段名
      * @param object 字段值
      */
-    public static void setFieldValue(Field field, Object obj, String name, Object object) {
+    public static void setFieldValue(Field field, Object obj, Object object) {
         try {
             field.setAccessible(true);
             field.set(obj, object);
@@ -502,10 +419,9 @@ public class ReflectUtils {
      * 获取静态字段值
      *
      * @param field 字段
-     * @param name  字段名
      * @return Object 字段值
      */
-    public static Object getStaticFieldValue(Field field, String name) {
+    public static Object getStaticFieldValue(Field field) {
         try {
             field.setAccessible(true);
             return field.get(null);
@@ -519,10 +435,9 @@ public class ReflectUtils {
      * 设置静态字段值
      *
      * @param field  字段
-     * @param name   字段名
      * @param object 字段值
      */
-    public static void setStaticFieldValue(Field field, String name, Object object) {
+    public static void setStaticFieldValue(Field field, Object object) {
         try {
             field.setAccessible(true);
             field.set(null, object);

@@ -27,14 +27,10 @@
     <list default="true" id="72c1ea27-e915-48ec-8c25-e9953ee245dc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/JamiexuUtils/JamiexuUtils.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/JamiexuUtils/JamiexuUtils.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/Main$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/file/FileChannelUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/file/FileChannelUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/file/ZipUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/file/ZipUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/reflect/ReflectUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/reflect/ReflectUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/file/FileUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/file/FileUtils.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/jamiexu/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jamiexu/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jamiexu/utils/file/FileChannelUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jamiexu/utils/file/FileChannelUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jamiexu/utils/file/ZipUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jamiexu/utils/file/ZipUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/jamiexu/utils/file/FileUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jamiexu/utils/file/FileUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/jamiexu/utils/reflect/ReflectUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jamiexu/utils/reflect/ReflectUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -137,7 +133,8 @@
       <workItem from="1597477456536" duration="3058000" />
       <workItem from="1597514755948" duration="3236000" />
       <workItem from="1598105545956" duration="4477000" />
-      <workItem from="1598146914657" duration="1033000" />
+      <workItem from="1598146914657" duration="6166000" />
+      <workItem from="1598190096584" duration="2030000" />
     </task>
     <servers />
   </component>
@@ -170,31 +167,35 @@
     </state>
     <state x="739" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1598147034277" />
     <state x="739" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1597517382394" />
-    <state width="1877" height="198" key="GridCell.Tab.0.bottom" timestamp="1598147393489">
+    <state width="1877" height="198" key="GridCell.Tab.0.bottom" timestamp="1598171389449">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="198" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1598147393489" />
+    <state width="1877" height="198" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1598171389449" />
     <state width="1877" height="277" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1597518922605" />
-    <state width="1877" height="198" key="GridCell.Tab.0.center" timestamp="1598147393489">
+    <state width="1877" height="198" key="GridCell.Tab.0.center" timestamp="1598171389448">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="198" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1598147393489" />
+    <state width="1877" height="198" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1598171389448" />
     <state width="1877" height="277" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1597518922605" />
-    <state width="1877" height="198" key="GridCell.Tab.0.left" timestamp="1598147393488">
+    <state width="1877" height="198" key="GridCell.Tab.0.left" timestamp="1598171389448">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="198" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1598147393488" />
+    <state width="1877" height="198" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1598171389448" />
     <state width="1877" height="277" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1597518922605" />
-    <state width="1877" height="198" key="GridCell.Tab.0.right" timestamp="1598147393489">
+    <state width="1877" height="198" key="GridCell.Tab.0.right" timestamp="1598171389449">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="198" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1598147393489" />
+    <state width="1877" height="198" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1598171389449" />
     <state width="1877" height="277" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1597518922605" />
     <state x="461" y="162" key="SettingsEditor" timestamp="1598147432051">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1598147432051" />
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1597517353955" />
+    <state x="662" y="252" width="596" height="594" key="find.popup" timestamp="1598148163768">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="662" y="252" width="596" height="594" key="find.popup/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1598148163768" />
     <state x="334" y="130" key="new project wizard" timestamp="1597517400497">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

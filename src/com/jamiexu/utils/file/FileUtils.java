@@ -58,6 +58,63 @@ public class FileUtils {
         return stringBuilder.toString();
     }
 
+
+    /**
+     * 读取指定行间的文本
+     *
+     * @param path 文件路径
+     * @return 文件内容
+     */
+    public static String getLinesString(String path, int line, int line2) {
+        FileReader fileReader = null;
+        BufferedReader bufferedReader = null;
+        StringBuilder stringBuilder = new StringBuilder();
+        try {
+            fileReader = new FileReader(path);
+            bufferedReader = new BufferedReader(fileReader);
+            String str = null;
+            int lines = 1;
+            while ((str = bufferedReader.readLine()) != null) {
+                if (lines >= line && lines <= line2)
+                    stringBuilder.append(str).append("\n");
+                lines++;
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (fileReader != null) {
+                try {
+                    fileReader.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            if (bufferedReader != null) {
+                try {
+                    bufferedReader.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
+        }
+        return stringBuilder.toString();
+    }
+
+    /**
+     * 获取指定行的文本内容
+     * @param path 文件路径
+     * @param line 行号
+     * @return
+     */
+    public static String getLineString(String path,int line){
+        return getLinesString(path,line,line);
+    }
+
+
     /**
      * 写出文本文件
      *
@@ -401,7 +458,7 @@ public class FileUtils {
     /**
      * 验证文件sha256
      *
-     * @param path 文件路径
+     * @param path   文件路径
      * @param sha256 sha256
      * @return boolean 返回布尔值
      */
