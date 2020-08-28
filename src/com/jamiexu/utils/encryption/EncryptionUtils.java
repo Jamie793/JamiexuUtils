@@ -14,7 +14,9 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
+import java.util.zip.Adler32;
 import java.util.zip.CRC32;
+import java.util.zip.Checksum;
 
 /**
  * @author Jamiexu or Jamie793
@@ -69,6 +71,13 @@ public class EncryptionUtils {
     }
 
 
+    public static long getAlder32(byte[] bytes){
+        Checksum checksumEngine = new Adler32();
+        checksumEngine.update(bytes,0,bytes.length);
+        return checksumEngine.getValue();
+    }
+
+
     /**
      * URL编码
      *
@@ -103,13 +112,12 @@ public class EncryptionUtils {
      * 获取Sha1
      *
      * @param bytes 需要获取sha1的bytes数组
-     * @param upper 返回结果是否转换成大写
-     * @return String 16进制文本
+     * @return byte[]
      */
-    public static String getSha1(byte[] bytes, boolean upper) {
+    public static byte[] getSha1(byte[] bytes) {
         try {
             MessageDigest messageDigest = MessageDigest.getInstance("SHA-1");
-            return ConvertUtils.bytesToHex(messageDigest.digest(bytes), upper);
+            return messageDigest.digest(bytes);
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }

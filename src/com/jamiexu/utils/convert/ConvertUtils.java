@@ -1,5 +1,9 @@
 package com.jamiexu.utils.convert;
 
+import java.io.ByteArrayInputStream;
+import java.io.DataInputStream;
+import java.io.IOException;
+import java.nio.ByteBuffer;
 import java.util.Base64;
 
 /**
@@ -38,6 +42,111 @@ public class ConvertUtils {
         if (upper)
             return stringBuilder.toString().toUpperCase();
         return stringBuilder.toString();
+    }
+
+
+    public static byte[] longToBytes(long l) {
+        ByteBuffer byteBuffer = ByteBuffer.allocate(8);
+        byteBuffer.putLong(l);
+        return byteBuffer.array();
+    }
+
+
+    /**
+     * bytes数组转16进制文本,默认小写
+     *
+     * @param bytes bytes数组
+     * @return String 16进制文本
+     */
+    public static String bytesToHex(byte[] bytes) {
+        return bytesToHex(bytes, false);
+    }
+
+    /**
+     * bytes数组反转16进制文本,默认小写
+     *
+     * @param bytes bytes数组
+     * @return String 16进制文本
+     */
+    public static String bytes2Hex(byte[] bytes) {
+        StringBuilder stringBuilder = new StringBuilder();
+        for(int i=bytes.length-1;i>=0;i--){
+            stringBuilder.append(String.format("%02x", bytes[i] & 0xFF));
+        }
+        return stringBuilder.toString();
+    }
+
+    /**
+     * bytes数组反转16进制文本,默认小写
+     *
+     * @param bytes bytes数组
+     * @param c 分隔符
+     * @return String 16进制文本
+     */
+    public static String bytes2Hex(byte[] bytes,char c) {
+        StringBuilder stringBuilder = new StringBuilder();
+        for(int i=bytes.length-1;i>=0;i--){
+            stringBuilder.append(String.format("%02x", bytes[i] & 0xFF)).append(c);
+        }
+        return stringBuilder.toString();
+    }
+
+
+    /**
+     * bytes数组转16进制文本,自定义分隔符
+     *
+     * @param bytes bytes数组
+     * @return String 16进制文本
+     */
+    public static String bytesToHex(byte[] bytes, char c) {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (byte b : bytes) {
+            stringBuilder.append(String.format("%02x", b & 0xFF)).append(c);
+        }
+        return stringBuilder.toString();
+    }
+
+
+    /**
+     * bytes转short
+     *
+     * @param bytes bytes数组
+     * @return short值
+     */
+    public static short bytesToShort(byte[] bytes) {
+        ByteBuffer buffer = ByteBuffer.wrap(bytes);
+        return buffer.getShort();
+    }
+
+
+    /**
+     * bytes数组反转后转int
+     *
+     * @param res bytes数组
+     * @return int
+     */
+    public static int bytes2Int(byte[] res) {
+        int targets = (res[0] & 0xff)
+                | ((res[1] << 8) & 0xff00)
+                | ((res[2] << 24) >>> 8)
+                | (res[3] << 24);
+        return targets;
+    }
+
+    /**
+     * bytes转int
+     *
+     * @param bytes bytes数组
+     * @return short
+     */
+    public static int bytesToInt(byte[] bytes) {
+        DataInputStream dataInputStream = new DataInputStream(new ByteArrayInputStream(bytes));
+        try {
+            return dataInputStream.readInt();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return -1;
     }
 
     /**
