@@ -1,8 +1,5 @@
 package com.jamiexu.utils.android.dex;
 
-import com.jamiexu.utils.convert.ByteUtils;
-import com.jamiexu.utils.convert.ConvertUtils;
-import com.jamiexu.utils.encryption.EncryptionUtils;
 import com.jamiexu.utils.file.FileUtils;
 
 public class DexParser {
@@ -19,7 +16,7 @@ public class DexParser {
         }
         this.dexBytes = dexBytes;
         this.dexHeader = new DexHeader(dexBytes);
-        this.dexString = new DexString(dexBytes, dexHeader.string_ids_off,dexHeader.string_ids_size);
+        this.dexString = new DexString(dexBytes, dexHeader.string_ids_off, dexHeader.string_ids_size);
 
         return this;
     }
@@ -29,18 +26,20 @@ public class DexParser {
     }
 
     public boolean verifyCheckSum() {
-        byte[] bytes = ConvertUtils.longToBytes(EncryptionUtils.getAlder32(ByteUtils.copyBytes(this.dexBytes, 12, this.dexBytes.length - 12)));
-        bytes = ByteUtils.copyBytes(bytes, 4, 4);
-        String checksumHex = ConvertUtils.bytesToHex(bytes).toUpperCase();
-        String checksumHex2 = ConvertUtils.bytes2Hex(this.getDexHeader().checksum).toUpperCase();
-        return checksumHex2.equals(checksumHex);
+        return DexUtils.verifyCheckSum(this.dexBytes);
     }
 
     public boolean verifySignature() {
-        byte[] bytes = ByteUtils.copyBytes(this.dexBytes, 32, this.dexBytes.length - 32);
-        bytes = EncryptionUtils.getSha1(bytes);
-        String hex = ConvertUtils.bytesToHex(bytes).toUpperCase();
-        String hex2 = ConvertUtils.bytesToHex(this.getDexHeader().signature).toUpperCase();
-        return hex.equals(hex2);
+        return DexUtils.verifySignature(this.dexBytes);
     }
+
+    public void calcCheckSum() {
+        DexUtils.calcCheckSum(this.dexBytes);
+    }
+
+    public void calcSignature() {
+        DexUtils.calcSignature(this.dexBytes);
+    }
+
+
 }

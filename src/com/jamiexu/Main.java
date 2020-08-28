@@ -2,6 +2,7 @@ package com.jamiexu;
 
 
 import com.jamiexu.utils.android.dex.DexParser;
+import com.jamiexu.utils.android.dex.DexUtils;
 import com.jamiexu.utils.convert.ConvertUtils;
 
 import java.io.Serializable;
@@ -43,8 +44,7 @@ public class Main {
 
         DexParser dexParser = new DexParser();
         dexParser.parse("c:\\users\\jamiexu\\desktop\\classes.dex");
-        System.out.println(ConvertUtils.bytesToInt(new byte[]{0,0,0,-82}));
-        System.out.println(ConvertUtils.bytesToInt(new byte[]{0,0,0,2}));
+        System.out.println(dexParser.verifyCheckSum());
 
     }
 
