@@ -5,6 +5,7 @@ import com.jamiexu.utils.file.FileUtils;
 public class DexParser {
     public DexHeader dexHeader;
     public DexString dexString;
+    public DexType dexType;
 
     public byte[] dexBytes;
 
@@ -17,12 +18,20 @@ public class DexParser {
         this.dexBytes = dexBytes;
         this.dexHeader = new DexHeader(dexBytes);
         this.dexString = new DexString(dexBytes, dexHeader.string_ids_off, dexHeader.string_ids_size);
-
+        this.dexType = new DexType(dexBytes, dexHeader.type_ids_off, dexHeader.type_ids_size);
         return this;
     }
 
     public DexHeader getDexHeader() {
         return dexHeader;
+    }
+
+    public DexString getDexString() {
+        return dexString;
+    }
+
+    public DexType getDexType() {
+        return dexType;
     }
 
     public boolean verifyCheckSum() {
@@ -40,6 +49,11 @@ public class DexParser {
     public void calcSignature() {
         DexUtils.calcSignature(this.dexBytes);
     }
+
+    public void writeDex(String path) {
+        DexUtils.writeDex(path, this.dexBytes);
+    }
+
 
 
 }

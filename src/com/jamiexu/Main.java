@@ -2,8 +2,6 @@ package com.jamiexu;
 
 
 import com.jamiexu.utils.android.dex.DexParser;
-import com.jamiexu.utils.android.dex.DexUtils;
-import com.jamiexu.utils.convert.ConvertUtils;
 
 import java.io.Serializable;
 
@@ -25,25 +23,12 @@ public class Main {
     }
 
     public static void main(String[] args) {
-//        System.out.println(Arrays.toString(" L̀̀́;".toCharArray()));
-//        int c= 0x318E-0x3131*5;
-//        for(int i = 0x3131;i<0x318E;i++){
-////            System.out.println((char)((i*5+'0')));
-//        }
-//        char[] s = "/ۖۖ\"".toCharArray();
-//        char[] b = new char[2];
-//        System.arraycopy(s,1,b,0,2);
-//        System.out.println(Arrays.toString(b));
-//        System.out.println((char)b[0]);
-//        System.out.println((char)1750);
-//        System.out.println((char)1536);
-
-//        ElfParserUtils.parseElf("c:\\users\\jamiexu\\desktop\\su");
-//        ElfParserUtils.parseElf("c:\\users\\jamiexu\\desktop\\libarvip.so");
-
-
         DexParser dexParser = new DexParser();
         dexParser.parse("c:\\users\\jamiexu\\desktop\\classes.dex");
+        String[] strings = dexParser.getDexString().getStrings();
+        dexParser.getDexString().encrypt("1234567891111111".getBytes());
+        dexParser.getDexString().commit();
+        dexParser.getDexString().writeDex("c:\\users\\jamiexu\\desktop\\classes2.dex");
         System.out.println(dexParser.verifyCheckSum());
 
     }

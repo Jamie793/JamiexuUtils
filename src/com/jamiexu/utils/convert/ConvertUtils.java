@@ -70,27 +70,39 @@ public class ConvertUtils {
      */
     public static String bytes2Hex(byte[] bytes) {
         StringBuilder stringBuilder = new StringBuilder();
-        for(int i=bytes.length-1;i>=0;i--){
+        for (int i = bytes.length - 1; i >= 0; i--) {
             stringBuilder.append(String.format("%02x", bytes[i] & 0xFF));
         }
         return stringBuilder.toString();
     }
 
+
     /**
      * bytes数组反转16进制文本,默认小写
      *
      * @param bytes bytes数组
-     * @param c 分隔符
+     * @param c     分隔符
      * @return String 16进制文本
      */
-    public static String bytes2Hex(byte[] bytes,char c) {
+    public static String bytes2Hex(byte[] bytes, char c) {
         StringBuilder stringBuilder = new StringBuilder();
-        for(int i=bytes.length-1;i>=0;i--){
+        for (int i = bytes.length - 1; i >= 0; i--) {
             stringBuilder.append(String.format("%02x", bytes[i] & 0xFF)).append(c);
         }
         return stringBuilder.toString();
     }
 
+
+    public static byte[] int2Bytes(int n) {
+        ByteBuffer byteBuffer = ByteBuffer.allocate(4);
+        byteBuffer.putInt(n);
+        byte[] bytes = byteBuffer.array();
+        byte[] bytes1 = new byte[bytes.length];
+        for (int i = bytes.length - 1; i >= 0; i--) {
+            bytes1[bytes.length - i - 1] = bytes[i];
+        }
+        return bytes1;
+    }
 
     /**
      * bytes数组转16进制文本,自定义分隔符

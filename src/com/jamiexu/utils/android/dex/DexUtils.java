@@ -3,6 +3,9 @@ package com.jamiexu.utils.android.dex;
 import com.jamiexu.utils.convert.ByteUtils;
 import com.jamiexu.utils.convert.ConvertUtils;
 import com.jamiexu.utils.encryption.EncryptionUtils;
+import com.jamiexu.utils.file.FileUtils;
+
+import java.util.ArrayList;
 
 public class DexUtils {
     /**
@@ -65,4 +68,39 @@ public class DexUtils {
         }
         System.arraycopy(bytes, 0, src, 12, 20);
     }
+
+
+    /**
+     * 重新计算Checksum和Signature并写出文件
+     * @param path 路径
+     */
+    public static void writeDex(String path,byte[] bytes) {
+        calcSignature(bytes);
+        calcCheckSum(bytes);
+        FileUtils.writeFile(path, bytes);
+    }
+
+
+    /**
+     * 获取对应偏移的字符串数据
+     * @param bytes dexBytes
+     * @param offset 偏移
+     * @return byte[] 字符串字节数组
+     */
+    public static byte[] getStringBytes(byte[] bytes,int offset){
+        ArrayList<Byte> arrayList = new ArrayList<>();
+        for (int i = 0; i < bytes.length; i++) {
+            byte b = bytes[offset + i];
+            if (b == 0) {
+                break;
+            }
+            arrayList.add(b);
+        }
+        bytes = new byte[arrayList.size()];
+        for (int i = 0; i < arrayList.size(); i++) {
+            bytes[i] = arrayList.get(i);
+        }
+        return bytes;
+    }
+
 }
