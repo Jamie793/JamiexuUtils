@@ -2,6 +2,7 @@ package com.jamiexu;
 
 
 import com.jamiexu.utils.android.dex.DexParser;
+import com.jamiexu.utils.android.dex.throwable.DexStringParseException;
 
 import java.io.Serializable;
 
@@ -23,13 +24,13 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        DexParser dexParser = new DexParser();
-        dexParser.parse("c:\\users\\jamiexu\\desktop\\classes.dex");
-        String[] strings = dexParser.getDexString().getStrings();
-        dexParser.getDexString().encrypt("1234567891111111".getBytes());
-        dexParser.getDexString().commit();
-        dexParser.getDexString().writeDex("c:\\users\\jamiexu\\desktop\\classes2.dex");
-        System.out.println(dexParser.verifyCheckSum());
+        try {
+            DexParser dexParser = new DexParser();
+            dexParser.parse("c:\\users\\jamiexu\\desktop\\classes.dex");
+        } catch (DexStringParseException e) {
+            e.printStackTrace();
+        }
+
 
     }
 

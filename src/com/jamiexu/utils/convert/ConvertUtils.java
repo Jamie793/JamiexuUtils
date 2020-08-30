@@ -1,6 +1,7 @@
 package com.jamiexu.utils.convert;
 
 import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.DataInputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -75,6 +76,23 @@ public class ConvertUtils {
         }
         return stringBuilder.toString();
     }
+
+
+    /**
+     * int抓leb128可变长字节数组
+     * @param value int
+     * @return byte[]
+     */
+    public static byte[] intToULeb128(int value) {
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        while ((value & 0xffffffffL) > 0x7f) {
+            byteArrayOutputStream.write((value & 0x7f) | 0x80);
+            value >>>= 7;
+        }
+        byteArrayOutputStream.write(value);
+        return byteArrayOutputStream.toByteArray();
+    }
+
 
 
     /**

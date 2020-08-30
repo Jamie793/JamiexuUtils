@@ -1,9 +1,11 @@
 package com.jamiexu.utils.android.dex;
 
+import com.jamiexu.utils.android.dex.base.BaseDexParse;
+import com.jamiexu.utils.android.dex.throwable.DexStringParseException;
 import com.jamiexu.utils.convert.ByteUtils;
 import com.jamiexu.utils.convert.ConvertUtils;
 
-public class DexHeader {
+public class DexHeader extends BaseDexParse<DexHeader> {
 
     //    dexBytes
     public byte[] dexBytes;
@@ -82,10 +84,14 @@ public class DexHeader {
     public DexHeader(byte[] bytes) {
         this.dexBytes = bytes;
         this.currentOffset = 0;
-        parse();
     }
 
-    private void parse() {
+
+    @Override
+    public DexHeader parse() throws DexStringParseException {
+        if (this.dexBytes == null)
+            throw new DexStringParseException("dexBytes is null...");
+
         this.magic = read(8);
         this.checksum = read(4);
         this.signature = read(20);
@@ -109,6 +115,7 @@ public class DexHeader {
         this.class_defs_off = ConvertUtils.bytes2Int(read(4));
         this.data_size = ConvertUtils.bytes2Int(read(4));
         this.data_off = ConvertUtils.bytes2Int(read(4));
+        return this;
     }
 
     private byte[] read(int len) {

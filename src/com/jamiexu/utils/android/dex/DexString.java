@@ -1,77 +1,117 @@
 package com.jamiexu.utils.android.dex;
 
+import com.jamiexu.utils.android.dex.base.BaseDexParse;
+import com.jamiexu.utils.android.dex.item.StringDataItem;
+import com.jamiexu.utils.android.dex.throwable.DexStringParseException;
 import com.jamiexu.utils.convert.ByteUtils;
 import com.jamiexu.utils.convert.ConvertUtils;
-import com.jamiexu.utils.encryption.EncryptionUtils;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-public class DexString {
-    private byte[] dexBytes;
-    private final int size;
-    private final int offset;
-    private final ArrayList<StringItme> stringItmes;
+public class DexString extends BaseDexParse<DexString> {
+    private final byte[] dexBytes;
+    private final int indexOffset;
+    private int stringOffset;
+    private int indexSize;
+    private HashMap<Integer, StringDataItem> stringDataItems;
 
-    public DexString(byte[] dexBytes, int offset, int size) {
+    public DexString(byte[] dexBytes, int indexOffset, int indexSize) {
         this.dexBytes = dexBytes;
-        this.offset = offset;
-        this.size = size;
-        this.stringItmes = new ArrayList<>();
-        parse();
+        this.indexOffset = indexOffset;
+        this.indexSize = indexSize;
+        this.stringDataItems = new HashMap<>();
     }
 
-    public String[] getStrings() {
-        String[] strings = new String[this.stringItmes.size()];
-        for (int i = 0; i < this.stringItmes.size(); i++) {
-            strings[i] = new String(this.stringItmes.get(i).getData());
+    public DexString parse() throws DexStringParseException {
+        if (this.dexBytes == null)
+            throw new DexStringParseException("dexBytes is null...");
+        else if (this.indexSize < 0) {
+            throw new DexStringParseException("offset exception...");
         }
-        return strings;
+
+        getStringOffset();
+        parseStringDataItem();
+        return this;
     }
 
+    private void getStringOffset() {
+        byte[] indexBytes = ByteUtils.copyBytes(this.dexBytes, this.indexOffset, 4);
+        this.stringOffset = ConvertUtils.bytes2Int(indexBytes);
+    }
 
-    public void encrypt(byte[] bytes) {
-        for (StringItme stringItme : this.stringItmes) {
-            byte[] enBytes = EncryptionUtils.enDes(stringItme.getData(),bytes,1);
-            stringItme.setData(enBytes);
+    public String[] getStringDatas() {
+        ArrayList<String> arrayList = new ArrayList<>();
+        for (Map.Entry<Integer, StringDataItem> stringDataItemEntry : this.stringDataItems.entrySet()) {
+            arrayList.add(stringDataItemEntry.getValue().getData());
         }
+        return arrayList.toArray(new String[0]);
     }
 
+    public HashMap<Integer, StringDataItem> getStringDataItems() {
+        return this.stringDataItems;
+    }
 
-    public void commit() {
-        StringItme firstItem = this.stringItmes.get(0);
-        StringItme lastItem = this.stringItmes.get(this.stringItmes.size() - 1);
-        byte[] headerBytes = ByteUtils.copyBytes(this.dexBytes, 0, firstItem.getOffset() - firstItem.getLeb128Size());
-        byte[] endBytes = ByteUtils.copyBytes(this.dexBytes, lastItem.getOffset() + lastItem.getSize(),
-                this.dexBytes.length - (lastItem.getOffset() + lastItem.getSize()));
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        int offset = headerBytes.length;
-        for (StringItme s : this.stringItmes
-        ) {
-            try {
-                byteArrayOutputStream.write(s.getLeb128());
-                byteArrayOutputStream.write(s.getData());
-                int len = s.getLeb128Size() + s.getSize();
-                byte[] index = ConvertUtils.int2Bytes(offset);
-                System.arraycopy(index, 0, headerBytes, s.getIndex(), index.length);
-                offset += len;
-            } catch (IOException e) {
-                e.printStackTrace();
+    private void parseStringDataItem() {
+        for (int i = 0; i < this.indexSize; i++) {
+            byte[] indexBytes = ByteUtils.copyBytes(this.dexBytes, this.indexOffset + i * 4, 4);
+            int strOffset = ConvertUtils.bytes2Int(indexBytes);
+
+            byte[] uleb128 = readUnsignedLeb128(strOffset);
+            int size = decodeUleb128(uleb128);
+
+            byte[] strBytes = ByteUtils.copyBytes(this.dexBytes, strOffset + uleb128.length, size);
+            while (strBytes.length != 0 && strBytes[strBytes.length - 1] != 0) {
+                strBytes = ByteUtils.copyBytes(this.dexBytes, strOffset + uleb128.length, size++);
             }
-        }
 
-        byte[] newStringBytes = byteArrayOutputStream.toByteArray();
-        byte[] newDexBytes = new byte[headerBytes.length + newStringBytes.length + endBytes.length];
-        System.arraycopy(headerBytes, 0, newDexBytes, 0, headerBytes.length);
-        System.arraycopy(newStringBytes, 0, newDexBytes, headerBytes.length, newStringBytes.length);
-        System.arraycopy(endBytes, 0, newDexBytes, headerBytes.length + newStringBytes.length, endBytes.length);
-        this.dexBytes = newDexBytes;
+            String str = new String(strBytes, 0, strBytes.length, StandardCharsets.UTF_8);
+            this.stringDataItems.put(strOffset, new StringDataItem(str, str.length()));
+        }
     }
 
-    public void writeDex(String path) {
-        DexUtils.writeDex(path, this.dexBytes);
+    private static int decodeUleb128(byte[] byteAry) {
+        int index = 0, cur;
+        int result = byteAry[index];
+        index++;
+
+        if (byteAry.length == 1) {
+            return result;
+        }
+
+        if (byteAry.length == 2) {
+            cur = byteAry[index];
+            index++;
+            result = (result & 0x7f) | ((cur & 0x7f) << 7);
+            return result;
+        }
+
+        if (byteAry.length == 3) {
+            cur = byteAry[index];
+            index++;
+            result |= (cur & 0x7f) << 14;
+            return result;
+        }
+
+        if (byteAry.length == 4) {
+            cur = byteAry[index];
+            index++;
+            result |= (cur & 0x7f) << 21;
+            return result;
+        }
+
+        if (byteAry.length == 5) {
+            cur = byteAry[index];
+            index++;
+            result |= cur << 28;
+            return result;
+        }
+
+        return result;
+
     }
 
 
@@ -94,76 +134,5 @@ public class DexString {
         return byteAry;
     }
 
-    private void parse() {
-        for (int i = 0; i < this.size; i++) {
-            int index = this.offset + i * 4;
-            int offset = ConvertUtils.bytes2Int(ByteUtils.copyBytes(this.dexBytes, index, 4));
-            getString(index, offset);
-        }
-    }
 
-
-    private void getString(int index, int offset) {
-        byte[] s = readUnsignedLeb128(offset);
-        offset += s.length;
-        byte[] bytes = DexUtils.getStringBytes(this.dexBytes, offset);
-        this.stringItmes.add(new StringItme(index, offset, s, bytes));
-    }
-
-
-    static class StringItme {
-        private final int index;
-        private int offset;
-        private int size;
-        private int leb128Size;
-        private final byte[] leb128;
-        private byte[] data;
-
-        public StringItme(int index, int offset, byte[] leb128, byte[] data) {
-            this.index = index;
-            this.offset = offset;
-            this.leb128 = leb128;
-            this.leb128Size = leb128.length;
-            this.size = data.length + 1;
-            this.data = new byte[this.size];
-            System.arraycopy(data, 0, this.data, 0, data.length);
-        }
-
-        public int getLeb128Size() {
-            return leb128Size;
-        }
-
-        public void setLeb128Size(int leb128Size) {
-            this.leb128Size = leb128Size;
-        }
-
-        public byte[] getLeb128() {
-            return leb128;
-        }
-
-        public int getIndex() {
-            return index;
-        }
-
-        public int getOffset() {
-            return offset;
-        }
-
-        public void setOffset(int offset) {
-            this.offset = offset;
-        }
-
-        public int getSize() {
-            return size;
-        }
-
-        public byte[] getData() {
-            return data;
-        }
-
-        public void setData(byte[] data) {
-            this.data = data;
-            this.size = this.data.length;
-        }
-    }
 }

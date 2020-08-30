@@ -5,11 +5,13 @@ import com.jamiexu.utils.convert.ConvertUtils;
 import com.jamiexu.utils.encryption.EncryptionUtils;
 import com.jamiexu.utils.file.FileUtils;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 
 public class DexUtils {
     /**
      * 验证Dex CheckSum值
+     *
      * @param src dexBytes
      * @return boolean
      */
@@ -26,6 +28,7 @@ public class DexUtils {
 
     /**
      * 验证Dex Signature值
+     *
      * @param src dexBytes
      * @return boolean
      */
@@ -42,6 +45,7 @@ public class DexUtils {
 
     /**
      * 重新计算 CheckSum值
+     *
      * @param src dexBytes
      */
     public static void calcCheckSum(byte[] src) {
@@ -57,6 +61,7 @@ public class DexUtils {
 
     /**
      * 重新计算 Signature值
+     *
      * @param src dexBytes
      */
     public static void calcSignature(byte[] src) {
@@ -72,9 +77,10 @@ public class DexUtils {
 
     /**
      * 重新计算Checksum和Signature并写出文件
+     *
      * @param path 路径
      */
-    public static void writeDex(String path,byte[] bytes) {
+    public static void writeDex(String path, byte[] bytes) {
         calcSignature(bytes);
         calcCheckSum(bytes);
         FileUtils.writeFile(path, bytes);
@@ -83,11 +89,12 @@ public class DexUtils {
 
     /**
      * 获取对应偏移的字符串数据
-     * @param bytes dexBytes
+     *
+     * @param bytes  dexBytes
      * @param offset 偏移
      * @return byte[] 字符串字节数组
      */
-    public static byte[] getStringBytes(byte[] bytes,int offset){
+    public static byte[] getStringBytes(byte[] bytes, int offset) {
         ArrayList<Byte> arrayList = new ArrayList<>();
         for (int i = 0; i < bytes.length; i++) {
             byte b = bytes[offset + i];
@@ -102,5 +109,8 @@ public class DexUtils {
         }
         return bytes;
     }
+
+
+
 
 }

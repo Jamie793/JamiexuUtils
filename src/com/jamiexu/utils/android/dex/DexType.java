@@ -1,65 +1,65 @@
 package com.jamiexu.utils.android.dex;
 
+import com.jamiexu.utils.android.dex.base.BaseDexParse;
+import com.jamiexu.utils.android.dex.item.StringDataItem;
+import com.jamiexu.utils.android.dex.item.TypeIDItem;
 import com.jamiexu.utils.convert.ByteUtils;
 import com.jamiexu.utils.convert.ConvertUtils;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
-public class DexType {
+public class DexType extends BaseDexParse<DexType> {
     private final byte[] dexBytes;
-    private final int offset;
-    private final int size;
-    private final ArrayList<TypeItem> typeItems;
+    private final int indexOffset;
+    private final int indexSize;
+    private final ArrayList<TypeIDItem> typeIDItems;
+    private final HashMap<Integer, StringDataItem> stringDataItemHashMap;
 
-    public DexType(byte[] dexBytes, int offset, int size) {
+    public DexType(byte[] dexBytes, int indexOffset, int indexSize, HashMap<Integer, StringDataItem> stringDataItemHashMap) {
         this.dexBytes = dexBytes;
-        this.offset = offset;
-        this.size = size;
-        this.typeItems = new ArrayList<>();
-        parse();
-//        System.out.println(this.offset);
+        this.indexOffset = indexOffset;
+        this.indexSize = indexSize;
+        this.typeIDItems = new ArrayList<>();
+        this.stringDataItemHashMap = stringDataItemHashMap;
     }
 
-    public void parse() {
-        for (int i = 0; i < this.size; i++) {
-            int index = this.offset + i * 4;
-            int offset = ConvertUtils.bytes2Int(ByteUtils.copyBytes(this.dexBytes, index, 4));
-            this.typeItems.add(new TypeItem(index, offset));
+    public DexType parse() {
+        int is = 0;
+        for (int i = 0; i < this.indexSize; i++) {
+            byte[] indexBytes = ByteUtils.copyBytes(this.dexBytes, this.indexOffset + i * 4, 4);
+            int offset = ConvertUtils.bytes2Int(indexBytes);
+            indexBytes = ByteUtils.copyBytes(this.dexBytes, offset, 4);
+            int index = ConvertUtils.bytes2Int(indexBytes);
+            StringDataItem stringDataItem = this.stringDataItemHashMap.get(index);
+//            if (stringDataItem != null) {
+                System.out.println(stringDataItem);
+//            }
+//            this.typeIDItems.add(new TypeIDItem(index, stringDataItem.getData()));
         }
+        return this;
     }
 
-    public ArrayList<TypeItem> getTypeItems() {
-        return typeItems;
+
+    private byte[] readUnsignedLeb128(int offset) {
+        List<Byte> byteAryList = new ArrayList<>();
+        byte bytes = ByteUtils.copyBytes(this.dexBytes, offset, 1)[0];
+        byte highBit = (byte) (bytes & 0x80);
+        byteAryList.add(bytes);
+        offset++;
+        while (highBit != 0) {
+            bytes = ByteUtils.copyBytes(this.dexBytes, offset, 1)[0];
+            highBit = (byte) (bytes & 0x80);
+            offset++;
+            byteAryList.add(bytes);
+        }
+        byte[] byteAry = new byte[byteAryList.size()];
+        for (int j = 0; j < byteAryList.size(); j++) {
+            byteAry[j] = byteAryList.get(j);
+        }
+        return byteAry;
     }
 
-
-    static class TypeItem {
-        private int index;
-        private int offset;
-
-
-        public TypeItem(int index, int offset) {
-            this.index = index;
-            this.offset = offset;
-        }
-
-
-        public int getIndex() {
-            return index;
-        }
-
-        public void setIndex(int index) {
-            this.index = index;
-        }
-
-        public int getOffset() {
-            return offset;
-        }
-
-        public void setOffset(int offset) {
-            this.offset = offset;
-        }
-
-    }
 
 }
