@@ -26,6 +26,10 @@
   <component name="ChangeListManager">
     <list default="true" id="72c1ea27-e915-48ec-8c25-e9953ee245dc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/jamiexu/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jamiexu/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/jamiexu/utils/android/dex/DexString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jamiexu/utils/android/dex/DexString.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/jamiexu/utils/android/dex/DexType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jamiexu/utils/android/dex/DexType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/jamiexu/utils/android/dex/DexUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jamiexu/utils/android/dex/DexUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +154,7 @@
       <workItem from="1598591294375" duration="31998000" />
       <workItem from="1598662785446" duration="28058000" />
       <workItem from="1598744483884" duration="25754000" />
-      <workItem from="1598792173919" duration="1695000" />
+      <workItem from="1598792173919" duration="3878000" />
     </task>
     <servers />
   </component>

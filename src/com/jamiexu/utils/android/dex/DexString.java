@@ -15,9 +15,8 @@ import java.util.Map;
 public class DexString extends BaseDexParse<DexString> {
     private final byte[] dexBytes;
     private final int indexOffset;
-    private int stringOffset;
-    private int indexSize;
-    private HashMap<Integer, StringDataItem> stringDataItems;
+    private final int indexSize;
+    private final HashMap<Integer, StringDataItem> stringDataItems;
 
     public DexString(byte[] dexBytes, int indexOffset, int indexSize) {
         this.dexBytes = dexBytes;
@@ -33,14 +32,8 @@ public class DexString extends BaseDexParse<DexString> {
             throw new DexStringParseException("offset exception...");
         }
 
-        getStringOffset();
         parseStringDataItem();
         return this;
-    }
-
-    private void getStringOffset() {
-        byte[] indexBytes = ByteUtils.copyBytes(this.dexBytes, this.indexOffset, 4);
-        this.stringOffset = ConvertUtils.bytes2Int(indexBytes);
     }
 
     public String[] getStringDatas() {
@@ -69,7 +62,7 @@ public class DexString extends BaseDexParse<DexString> {
             }
 
             String str = new String(strBytes, 0, strBytes.length, StandardCharsets.UTF_8);
-            this.stringDataItems.put(strOffset, new StringDataItem(str, str.length()));
+            this.stringDataItems.put(i, new StringDataItem(str, str.length()));
         }
     }
 

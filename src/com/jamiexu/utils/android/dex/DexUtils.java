@@ -5,7 +5,6 @@ import com.jamiexu.utils.convert.ConvertUtils;
 import com.jamiexu.utils.encryption.EncryptionUtils;
 import com.jamiexu.utils.file.FileUtils;
 
-import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 
 public class DexUtils {
@@ -109,8 +108,6 @@ public class DexUtils {
         }
         return bytes;
     }
-
-
 
 
 }

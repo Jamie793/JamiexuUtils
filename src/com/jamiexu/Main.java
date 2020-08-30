@@ -25,8 +25,8 @@ public class Main {
 
     public static void main(String[] args) {
         try {
-            DexParser dexParser = new DexParser();
-            dexParser.parse("c:\\users\\jamiexu\\desktop\\classes.dex");
+            DexParser dexParser = new DexParser("c:\\users\\jamiexu\\desktop\\classes.dex");
+            dexParser.parse();
         } catch (DexStringParseException e) {
             e.printStackTrace();
         }

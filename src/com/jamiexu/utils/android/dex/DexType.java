@@ -30,15 +30,15 @@ public class DexType extends BaseDexParse<DexType> {
         for (int i = 0; i < this.indexSize; i++) {
             byte[] indexBytes = ByteUtils.copyBytes(this.dexBytes, this.indexOffset + i * 4, 4);
             int offset = ConvertUtils.bytes2Int(indexBytes);
-            indexBytes = ByteUtils.copyBytes(this.dexBytes, offset, 4);
-            int index = ConvertUtils.bytes2Int(indexBytes);
-            StringDataItem stringDataItem = this.stringDataItemHashMap.get(index);
-//            if (stringDataItem != null) {
-                System.out.println(stringDataItem);
-//            }
-//            this.typeIDItems.add(new TypeIDItem(index, stringDataItem.getData()));
+            StringDataItem stringDataItem = this.stringDataItemHashMap.get(offset);
+            System.out.println(stringDataItem.getData());
+            this.typeIDItems.add(new TypeIDItem(offset, stringDataItem.getData()));
         }
         return this;
+    }
+
+    public ArrayList<TypeIDItem> getTypeIDItems() {
+        return this.typeIDItems;
     }
 
 
