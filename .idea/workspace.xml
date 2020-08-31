@@ -25,22 +25,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72c1ea27-e915-48ec-8c25-e9953ee245dc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/jamiexu/utils/android/dex/DexField.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/jamiexu/utils/android/dex/DexMethod.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/jamiexu/utils/android/dex/item/ProtoIDItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/jamiexu/utils/android/dex/item/TypeItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/android/dex/DexParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/android/dex/DexParser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/android/dex/DexProto.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/android/dex/DexProto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/android/dex/DexString.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/android/dex/DexString.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/android/dex/DexType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/android/dex/DexType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/android/dex/DexUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/android/dex/DexUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/convert/ConvertUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/convert/ConvertUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jamiexu/utils/android/dex/DexParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jamiexu/utils/android/dex/DexParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jamiexu/utils/android/dex/DexProto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jamiexu/utils/android/dex/DexProto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jamiexu/utils/android/dex/DexString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jamiexu/utils/android/dex/DexString.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jamiexu/utils/android/dex/DexType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jamiexu/utils/android/dex/DexType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jamiexu/utils/convert/ConvertUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jamiexu/utils/convert/ConvertUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,7 +154,7 @@
       <workItem from="1598662785446" duration="28058000" />
       <workItem from="1598744483884" duration="25754000" />
       <workItem from="1598792173919" duration="5839000" />
-      <workItem from="1598846743722" duration="9604000" />
+      <workItem from="1598846743722" duration="9729000" />
     </task>
     <servers />
   </component>
@@ -209,25 +194,25 @@
     </state>
     <state x="739" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1598573774103" />
     <state x="739" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1597517382394" />
-    <state width="1877" height="425" key="GridCell.Tab.0.bottom" timestamp="1598873985647">
+    <state width="1877" height="425" key="GridCell.Tab.0.bottom" timestamp="1598874072513">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="425" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1598873985646" />
+    <state width="1877" height="425" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1598874072513" />
     <state width="1877" height="277" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1597518922605" />
-    <state width="1877" height="425" key="GridCell.Tab.0.center" timestamp="1598873985646">
+    <state width="1877" height="425" key="GridCell.Tab.0.center" timestamp="1598874072513">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="425" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1598873985646" />
+    <state width="1877" height="425" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1598874072513" />
     <state width="1877" height="277" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1597518922605" />
-    <state width="1877" height="425" key="GridCell.Tab.0.left" timestamp="1598873985646">
+    <state width="1877" height="425" key="GridCell.Tab.0.left" timestamp="1598874072513">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="425" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1598873985646" />
+    <state width="1877" height="425" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1598874072513" />
     <state width="1877" height="277" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1597518922605" />
-    <state width="1877" height="425" key="GridCell.Tab.0.right" timestamp="1598873985646">
+    <state width="1877" height="425" key="GridCell.Tab.0.right" timestamp="1598874072513">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="425" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1598873985646" />
+    <state width="1877" height="425" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1598874072513" />
     <state width="1877" height="277" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1597518922605" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1598631428586">
       <screen x="0" y="0" width="1920" height="1040" />
