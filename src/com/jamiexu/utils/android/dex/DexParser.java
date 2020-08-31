@@ -8,6 +8,9 @@ public class DexParser extends BaseDexParse<DexParser> {
     public DexHeader dexHeader;
     public DexString dexString;
     public DexType dexType;
+    public DexProto dexProto;
+    public DexField dexField;
+    public DexMethod dexMethod;
 
     public byte[] dexBytes;
 
@@ -20,14 +23,24 @@ public class DexParser extends BaseDexParse<DexParser> {
         if (dexBytes == null) {
             throw new DexStringParseException("read dex file faile...");
         }
-        this.dexHeader = new DexHeader(dexBytes).parse();
-        this.dexString = new DexString(dexBytes, dexHeader.string_ids_off, dexHeader.string_ids_size);
         try {
+            this.dexHeader = new DexHeader(dexBytes);
+            dexHeader.parse();
+            this.dexString = new DexString(this);
             dexString.parse();
+            this.dexType = new DexType(this);
+            dexType.parse();
+            this.dexProto = new DexProto(this);
+            dexProto.parse();
+            this.dexField = new DexField(this);
+            this.dexField.parse();
+            this.dexMethod = new DexMethod(this);
+            this.dexMethod.parse();
+
         } catch (DexStringParseException e) {
             e.printStackTrace();
         }
-        this.dexType = (DexType) new DexType(this.dexBytes, dexHeader.type_ids_off, dexHeader.type_ids_size, dexString.getStringDataItems()).parse();
+
         return this;
     }
 
@@ -41,6 +54,18 @@ public class DexParser extends BaseDexParse<DexParser> {
 
     public DexType getDexType() {
         return dexType;
+    }
+
+    public DexProto getDexProto() {
+        return dexProto;
+    }
+
+    public DexField getDexField() {
+        return dexField;
+    }
+
+    public DexMethod getDexMethod() {
+        return dexMethod;
     }
 
     public boolean verifyCheckSum() {

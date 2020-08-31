@@ -13,15 +13,16 @@ import java.util.List;
 import java.util.Map;
 
 public class DexString extends BaseDexParse<DexString> {
+
     private final byte[] dexBytes;
     private final int indexOffset;
     private final int indexSize;
     private final HashMap<Integer, StringDataItem> stringDataItems;
 
-    public DexString(byte[] dexBytes, int indexOffset, int indexSize) {
-        this.dexBytes = dexBytes;
-        this.indexOffset = indexOffset;
-        this.indexSize = indexSize;
+    public DexString(DexParser dexParser) {
+        this.dexBytes = dexParser.dexBytes;
+        this.indexOffset = dexParser.getDexHeader().string_ids_off;
+        this.indexSize = dexParser.getDexHeader().string_ids_size;
         this.stringDataItems = new HashMap<>();
     }
 

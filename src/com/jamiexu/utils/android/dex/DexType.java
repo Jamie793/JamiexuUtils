@@ -14,30 +14,28 @@ public class DexType extends BaseDexParse<DexType> {
     private final byte[] dexBytes;
     private final int indexOffset;
     private final int indexSize;
-    private final ArrayList<TypeIDItem> typeIDItems;
+    private final HashMap<Integer, TypeIDItem> typeIDItems;
     private final HashMap<Integer, StringDataItem> stringDataItemHashMap;
 
-    public DexType(byte[] dexBytes, int indexOffset, int indexSize, HashMap<Integer, StringDataItem> stringDataItemHashMap) {
-        this.dexBytes = dexBytes;
-        this.indexOffset = indexOffset;
-        this.indexSize = indexSize;
-        this.typeIDItems = new ArrayList<>();
-        this.stringDataItemHashMap = stringDataItemHashMap;
+    public DexType(DexParser dexParser) {
+        this.dexBytes = dexParser.dexBytes;
+        this.indexOffset = dexParser.getDexHeader().type_ids_off;
+        this.indexSize = dexParser.getDexHeader().type_ids_size;
+        this.stringDataItemHashMap = dexParser.getDexString().getStringDataItems();
+        this.typeIDItems = new HashMap<>();
     }
 
     public DexType parse() {
-        int is = 0;
         for (int i = 0; i < this.indexSize; i++) {
             byte[] indexBytes = ByteUtils.copyBytes(this.dexBytes, this.indexOffset + i * 4, 4);
             int offset = ConvertUtils.bytes2Int(indexBytes);
             StringDataItem stringDataItem = this.stringDataItemHashMap.get(offset);
-            System.out.println(stringDataItem.getData());
-            this.typeIDItems.add(new TypeIDItem(offset, stringDataItem.getData()));
+            this.typeIDItems.put(i, new TypeIDItem(offset, stringDataItem.getData()));
         }
         return this;
     }
 
-    public ArrayList<TypeIDItem> getTypeIDItems() {
+    public HashMap<Integer, TypeIDItem> getTypeIDItems() {
         return this.typeIDItems;
     }
 

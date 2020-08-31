@@ -138,7 +138,7 @@ public class ConvertUtils {
 
 
     /**
-     * bytes转short
+     * bytes数组翻转后转short
      *
      * @param bytes bytes数组
      * @return short值
@@ -146,6 +146,30 @@ public class ConvertUtils {
     public static short bytesToShort(byte[] bytes) {
         ByteBuffer buffer = ByteBuffer.wrap(bytes);
         return buffer.getShort();
+    }
+
+
+    /**
+     * 翻转数组
+     * @param bytes byte[]
+     * @return byte[]
+     */
+    public static byte[] resverBytes(byte[] bytes){
+        byte[] newBytes = new byte[bytes.length];
+        for(int i=0;i<bytes.length;i++){
+            newBytes[bytes.length-i-1] = bytes[i];
+        }
+        return newBytes;
+    }
+
+    /**
+     * bytes转short
+     *
+     * @param bytes bytes数组
+     * @return short值
+     */
+    public static short bytes2Short(byte[] bytes) {
+        return bytesToShort(resverBytes(bytes));
     }
 
 
