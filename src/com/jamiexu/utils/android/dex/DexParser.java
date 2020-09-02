@@ -4,13 +4,14 @@ import com.jamiexu.utils.android.dex.base.BaseDexParse;
 import com.jamiexu.utils.android.dex.throwable.DexStringParseException;
 import com.jamiexu.utils.file.FileUtils;
 
-public class DexParser extends BaseDexParse<DexParser> {
+public class DexParser{
     public DexHeader dexHeader;
     public DexString dexString;
     public DexType dexType;
     public DexProto dexProto;
     public DexField dexField;
     public DexMethod dexMethod;
+    public DexClass dexClass;
 
     public byte[] dexBytes;
 
@@ -36,6 +37,8 @@ public class DexParser extends BaseDexParse<DexParser> {
             this.dexField.parse();
             this.dexMethod = new DexMethod(this);
             this.dexMethod.parse();
+            this.dexClass = new DexClass(this);
+            System.out.println(dexClass.parse());
 
         } catch (DexStringParseException e) {
             e.printStackTrace();

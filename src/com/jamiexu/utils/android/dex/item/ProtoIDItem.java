@@ -13,6 +13,9 @@ public class ProtoIDItem {
         this.typeItem = typeItem;
     }
 
+    public static int getSize(){
+        return 4+4+4;
+    }
 
     public int getShortyIdx() {
         return shortyIdx;

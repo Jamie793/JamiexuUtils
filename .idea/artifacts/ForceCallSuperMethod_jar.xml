@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ForceCallSuperMethod:jar">
+    <output-path>$PROJECT_DIR$/libs</output-path>
+    <root id="archive" name="ForceCallSuperMethod.jar">
+      <element id="module-output" name="ForceCallSuperMethod" />
+      <element id="dir-copy" path="$PROJECT_DIR$/ForceCallSuperMethod" />
+    </root>
+  </artifact>
+</component>

@@ -14,44 +14,37 @@ import java.util.Map;
 
 public class DexString extends BaseDexParse<DexString> {
 
-    private final byte[] dexBytes;
-    private final int indexOffset;
-    private final int indexSize;
-    private final HashMap<Integer, StringDataItem> stringDataItems;
-
     public DexString(DexParser dexParser) {
+        super(dexParser);
         this.dexBytes = dexParser.dexBytes;
         this.indexOffset = dexParser.getDexHeader().string_ids_off;
         this.indexSize = dexParser.getDexHeader().string_ids_size;
-        this.stringDataItems = new HashMap<>();
+        this.stringDataItemHashMap = new HashMap<>();
     }
 
+    @Override
     public DexString parse() throws DexStringParseException {
-        if (this.dexBytes == null)
-            throw new DexStringParseException("dexBytes is null...");
-        else if (this.indexSize < 0) {
-            throw new DexStringParseException("offset exception...");
-        }
-
+        super.parse();
         parseStringDataItem();
         return this;
     }
 
     public String[] getStringDatas() {
         ArrayList<String> arrayList = new ArrayList<>();
-        for (Map.Entry<Integer, StringDataItem> stringDataItemEntry : this.stringDataItems.entrySet()) {
+        for (Map.Entry<Integer, StringDataItem> stringDataItemEntry : this.stringDataItemHashMap.entrySet()) {
             arrayList.add(stringDataItemEntry.getValue().getData());
         }
         return arrayList.toArray(new String[0]);
     }
 
     public HashMap<Integer, StringDataItem> getStringDataItems() {
-        return this.stringDataItems;
+        return this.stringDataItemHashMap;
     }
 
     private void parseStringDataItem() {
         for (int i = 0; i < this.indexSize; i++) {
-            byte[] indexBytes = ByteUtils.copyBytes(this.dexBytes, this.indexOffset + i * 4, 4);
+            byte[] indexBytes = ByteUtils.copyBytes(this.dexBytes, this.indexOffset + i * StringDataItem.getSizes(),
+                    StringDataItem.getSizes());
             int strOffset = ConvertUtils.bytes2Int(indexBytes);
 
             byte[] uleb128 = readUnsignedLeb128(strOffset);
@@ -63,7 +56,7 @@ public class DexString extends BaseDexParse<DexString> {
             }
 
             String str = new String(strBytes, 0, strBytes.length, StandardCharsets.UTF_8);
-            this.stringDataItems.put(i, new StringDataItem(str, str.length()));
+            this.stringDataItemHashMap.put(i, new StringDataItem(str, str.length()));
         }
     }
 

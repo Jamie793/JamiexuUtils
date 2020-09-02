@@ -9,6 +9,10 @@ public class TypeIDItem {
         this.description = description;
     }
 
+    public static int getSize(){
+        return 4;
+    }
+
     public int getStringIndex() {
         return stringIndex;
     }

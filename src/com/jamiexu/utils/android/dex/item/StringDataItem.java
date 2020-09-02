@@ -10,6 +10,10 @@ public class StringDataItem {
         this.size = size;
     }
 
+    public static int getSizes(){
+        return 4;
+    }
+
 
     public String getData() {
         return data;

@@ -1,11 +1,10 @@
 package com.jamiexu.utils.android.dex;
 
-import com.jamiexu.utils.android.dex.base.BaseDexParse;
 import com.jamiexu.utils.android.dex.throwable.DexStringParseException;
 import com.jamiexu.utils.convert.ByteUtils;
 import com.jamiexu.utils.convert.ConvertUtils;
 
-public class DexHeader extends BaseDexParse<DexHeader> {
+public class DexHeader {
 
     //    dexBytes
     public byte[] dexBytes;
@@ -87,7 +86,6 @@ public class DexHeader extends BaseDexParse<DexHeader> {
     }
 
 
-    @Override
     public DexHeader parse() throws DexStringParseException {
         if (this.dexBytes == null)
             throw new DexStringParseException("dexBytes is null...");

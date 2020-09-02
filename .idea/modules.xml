@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/ForceCallSuperMethod/ForceCallSuperMethod.iml" filepath="$PROJECT_DIR$/ForceCallSuperMethod/ForceCallSuperMethod.iml" />
       <module fileurl="file://$PROJECT_DIR$/JamiexuUtils.iml" filepath="$PROJECT_DIR$/JamiexuUtils.iml" />
     </modules>
   </component>
