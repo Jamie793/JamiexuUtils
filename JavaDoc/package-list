@@ -1,4 +1,11 @@
 com.jamiexu
+com.jamiexu.annotation
+com.jamiexu.utils.android.dex
+com.jamiexu.utils.android.dex.base
+com.jamiexu.utils.android.dex.io
+com.jamiexu.utils.android.dex.item
+com.jamiexu.utils.android.dex.throwable
+com.jamiexu.utils.android.elf
 com.jamiexu.utils.convert
 com.jamiexu.utils.encryption
 com.jamiexu.utils.file
