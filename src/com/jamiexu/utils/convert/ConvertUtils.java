@@ -14,6 +14,8 @@ import java.util.Base64;
  */
 
 public class ConvertUtils {
+
+
     /**
      * 16进制文本转byte数组
      *
@@ -22,8 +24,8 @@ public class ConvertUtils {
      */
     public static byte[] hexToBytes(String hex) {
         byte[] bytes = new byte[hex.length() / 2];
-        for (int i = 0; i < bytes.length; i = i + 2) {
-            bytes[i] = (byte) Integer.parseInt(hex.substring(i, i + 1), 16);
+        for (int i = 0; i < hex.length(); i = i + 2) {
+            bytes[i/2] = (byte) Integer.parseInt(hex.substring(i, i + 2), 16);
         }
         return bytes;
     }

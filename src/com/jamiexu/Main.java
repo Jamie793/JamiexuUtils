@@ -3,6 +3,7 @@ package com.jamiexu;
 
 import com.jamiexu.utils.android.dex.DexParser;
 import com.jamiexu.utils.android.dex.throwable.DexStringParseException;
+import com.jamiexu.utils.convert.ConvertUtils;
 import com.jamiexu.utils.encryption.RsaUtils;
 import com.jamiexu.utils.file.FileUtils;
 import sun.reflect.misc.FieldUtil;
@@ -41,7 +42,7 @@ public class Main {
 //        }
 //        System.out.println(FileUtils.putString("c:\\users\\jamiexu\\desktop\\a.txt","rest"));
 //        System.out.println(FileUtils.getString("c:\\users\\jamiexu\\desktop\\a.txt"));
-        String[] strings = RsaUtils.genKeyPair()
+
     }
 
 
