@@ -1,17 +1,24 @@
 package com.jamiexu.utils.file;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.util.Objects;
 
 /**
- * @author Jamiexu or Jamie793
- * @version 1.0
- * 博客 blog.jamiexu.cn
- */
+ @author Jamiexu/Jamie793
+ @version 3.0
+ @date 2020/9/4
+ @time 19:11
+ @blog https://blog.jamiexu.cn
+ **/
+
 
 public class FileChannelUtils {
 
@@ -20,8 +27,10 @@ public class FileChannelUtils {
      *
      * @param from 源文件
      * @param to   目标文件
+     * @return boolean 状态
      */
-    public static void copyFile(String from, String to) {
+    public static boolean copyFile(String from, String to) {
+        boolean status = false;
         FileInputStream fileInputStream = null;
         FileOutputStream fileOutputStream = null;
         FileChannel fileChannel = null;
@@ -37,6 +46,9 @@ public class FileChannelUtils {
                 fileChannel1.write(byteBuffer);
                 byteBuffer.clear();
             }
+            if (new File(to).exists())
+                if (Objects.equals(FileUtils.getFileMd5(from, false), FileUtils.getFileMd5(to, false)))
+                    status = true;
 
         } catch (Throwable e) {
             e.printStackTrace();
@@ -74,6 +86,7 @@ public class FileChannelUtils {
                 }
             }
         }
+        return status;
     }
 
     /**
@@ -81,15 +94,19 @@ public class FileChannelUtils {
      *
      * @param from 源文件
      * @param to   目标文件
+     * @return boolean 状态
      */
-    public static void transferFile(String from, String to) {
+    public static boolean transferFile(String from, String to) {
+        boolean status = false;
         FileChannel fileChannel = null;
         FileChannel fileChannel1 = null;
         try {
             fileChannel = FileChannel.open(Paths.get(from), StandardOpenOption.READ);
             fileChannel1 = FileChannel.open(Paths.get(to), StandardOpenOption.READ, StandardOpenOption.WRITE, StandardOpenOption.CREATE);
-//            fileChannel.transferTo(0,fileChannel.size(),fileChannel1);
-            fileChannel1.transferFrom(fileChannel,0,fileChannel.size());
+            fileChannel1.transferFrom(fileChannel, 0, fileChannel.size());
+            if (new File(to).exists())
+                if (Objects.equals(FileUtils.getFileMd5(from, false), FileUtils.getFileMd5(to, false)))
+                    status = true;
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
@@ -109,6 +126,7 @@ public class FileChannelUtils {
                 }
             }
         }
+        return status;
 
     }
 
@@ -118,8 +136,10 @@ public class FileChannelUtils {
      *
      * @param from 源文件
      * @param to   目标文件
+     * @return boolean 状态
      */
-    public static void mapFile(String from, String to) {
+    public static boolean mapFile(String from, String to) {
+        boolean status = false;
         FileChannel fileChannel = null;
         FileChannel fileChannel1 = null;
         try {
@@ -133,6 +153,11 @@ public class FileChannelUtils {
             byte[] bytes = new byte[mappedByteBuffer.limit()];
             mappedByteBuffer.get(bytes);
             mappedByteBuffer1.put(bytes);
+
+            if (new File(to).exists())
+                if (Objects.equals(FileUtils.getFileMd5(from, false), FileUtils.getFileMd5(to, false)))
+                    status = true;
+
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
@@ -153,7 +178,7 @@ public class FileChannelUtils {
             }
 
         }
-
+        return status;
     }
 
 }

@@ -18,6 +18,15 @@ public class ClassDefItem {
     private final int classDataOff;
     private final int staticvaluesOff;
 
+    public final static int
+    ACC_PUBLIC = 0x00000001,
+    ACC_PRIVATE = 0x00000002,
+    ACC_PROTECTED = 0x00000004,
+    ACC_STATIC = 0x00000008,
+    ACC_FINAL = 0x00000010,
+    ACC_SYNCHRONIZED = 0x00000020;
+
+
     public ClassDefItem(int classIdx, int accessFlags, int superClassIdx, int interfaceOff, int sourceFileIdx, int annotationsOff, int classDataOff, int staticvaluesOff) {
         this.classIdx = classIdx;
         this.accessFlags = accessFlags;

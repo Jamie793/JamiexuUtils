@@ -3,11 +3,17 @@ package com.jamiexu;
 
 import com.jamiexu.utils.android.dex.DexParser;
 import com.jamiexu.utils.android.dex.throwable.DexStringParseException;
+import com.jamiexu.utils.encryption.RsaUtils;
+import com.jamiexu.utils.file.FileUtils;
+import sun.reflect.misc.FieldUtil;
+
+import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
 
 
 /**
  * @author Jamiexu/Jamie793
- * @version 1.0
+ * @version 3.0
  * @date 2020/9/1
  * @time 16:30
  * @blog https://blog.jamiexu.cn
@@ -27,12 +33,15 @@ public class Main {
 
 
     public static void main(String[] args) {
-        try {
-            DexParser dexParser = new DexParser("c:\\users\\jamiexu\\desktop\\classes.dex");
-            dexParser.parse();
-        } catch (DexStringParseException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            DexParser dexParser = new DexParser("c:\\users\\jamiexu\\desktop\\classes.dex");
+//            dexParser.parse();
+//        } catch (DexStringParseException e) {
+//            e.printStackTrace();
+//        }
+//        System.out.println(FileUtils.putString("c:\\users\\jamiexu\\desktop\\a.txt","rest"));
+//        System.out.println(FileUtils.getString("c:\\users\\jamiexu\\desktop\\a.txt"));
+        String[] strings = RsaUtils.genKeyPair()
     }
 
 
