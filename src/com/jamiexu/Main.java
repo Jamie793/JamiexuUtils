@@ -5,6 +5,7 @@ import com.jamiexu.utils.android.dex.DexParser;
 import com.jamiexu.utils.android.dex.throwable.DexStringParseException;
 import com.jamiexu.utils.convert.ConvertUtils;
 import com.jamiexu.utils.encryption.AesUtils;
+import com.jamiexu.utils.encryption.RC4Utils;
 import com.jamiexu.utils.encryption.RsaUtils;
 import com.jamiexu.utils.file.FileUtils;
 import sun.reflect.misc.FieldUtil;
@@ -46,7 +47,9 @@ public class Main {
         
 //        System.out.println(FileUtils.putString("c:\\users\\jamiexu\\desktop\\a.txt","rest"));
 //        System.out.println(FileUtils.getString("c:\\users\\jamiexu\\desktop\\a.txt"));
-
+        byte[] key = "123".getBytes();
+        RC4Utils.encryptFile("c:\\users\\jamiexu\\desktop\\a.txt","c:\\users\\jamiexu\\desktop\\b.txt",key);
+        RC4Utils.decryptFile("c:\\users\\jamiexu\\desktop\\b.txt","c:\\users\\jamiexu\\desktop\\bb.txt",key);
 
     }
 
