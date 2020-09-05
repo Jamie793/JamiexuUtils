@@ -392,7 +392,6 @@ public class HttpUtils {
      * @param fileTageName 文件标签名并不是文件名
      * @param paths        文件路径数组
      * @return HttpUtils
-     * @
      */
     public HttpUtils setUploadTFiles(String fileTageName, HashMap<String, String> datas, String... paths) {
         this.fileTageName = fileTageName;
