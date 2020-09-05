@@ -15,7 +15,7 @@ import java.util.Objects;
  * @time 13:34
  * @blog https://blog.jamiexu.cn
  **/
-public class ShaUtils {
+public class SHAUtils {
     /**
      * 获取Sha1
      *

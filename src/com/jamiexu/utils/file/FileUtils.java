@@ -13,7 +13,7 @@ import java.util.zip.CRC32;
 
 /**
  * @author Jamiexu/Jamie793
- * @version 3.0
+ * @version 4.0
  * @date 2020/9/4
  * @time 19:11
  * @blog https://blog.jamiexu.cn

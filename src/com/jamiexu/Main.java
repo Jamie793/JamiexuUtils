@@ -1,18 +1,7 @@
 package com.jamiexu;
 
 
-import com.jamiexu.utils.android.dex.DexParser;
-import com.jamiexu.utils.android.dex.throwable.DexStringParseException;
-import com.jamiexu.utils.convert.ConvertUtils;
-import com.jamiexu.utils.encryption.AesUtils;
-import com.jamiexu.utils.encryption.DesUtils;
-import com.jamiexu.utils.encryption.RC4Utils;
-import com.jamiexu.utils.encryption.RsaUtils;
-import com.jamiexu.utils.file.FileUtils;
-import sun.reflect.misc.FieldUtil;
-
-import java.nio.charset.StandardCharsets;
-import java.util.Arrays;
+import com.jamiexu.utils.encryption.DESUtils;
 
 
 /**
@@ -46,8 +35,8 @@ public class Main {
 //            e.printStackTrace();
 //        }
         byte[] key = "11111122".getBytes();
-        DesUtils.encryptFile("c:\\users\\jamiexu\\desktop\\a.txt","c:\\users\\jamiexu\\desktop\\b.txt",key);
-        DesUtils.decryptFile("c:\\users\\jamiexu\\desktop\\b.txt","c:\\users\\jamiexu\\desktop\\bb.txt",key);
+        DESUtils.encryptFile("c:\\users\\jamiexu\\desktop\\a.txt","c:\\users\\jamiexu\\desktop\\b.txt",key);
+        DESUtils.decryptFile("c:\\users\\jamiexu\\desktop\\b.txt","c:\\users\\jamiexu\\desktop\\bb.txt",key);
 
     }
 

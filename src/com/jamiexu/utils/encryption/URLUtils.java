@@ -11,7 +11,7 @@ import java.net.URLEncoder;
  * @time 13:46
  * @blog https://blog.jamiexu.cn
  **/
-public class UrlUtils {
+public class URLUtils {
 
     /**
      * URL编码

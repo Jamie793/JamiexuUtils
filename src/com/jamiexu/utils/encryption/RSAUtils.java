@@ -22,7 +22,7 @@ import java.util.Arrays;
  * @time 20:36
  * @blog https://blog.jamiexu.cn
  **/
-public class RsaUtils {
+public class RSAUtils {
 
 
     public static String[] genKeyPair() {
