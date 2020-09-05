@@ -34,35 +34,6 @@ public class EncryptionUtils {
     }
 
 
-    /**
-     * URL编码
-     *
-     * @param content 需要转换的内容
-     * @param mode    编码解码 1编码，2解码
-     * @return
-     */
-    public static String enUrl(String content, int mode) throws UnsupportedEncodingException {
-        if (mode == 1)
-            return URLEncoder.encode(content, "utf-8");
-        return URLDecoder.decode(content, "utf-8");
-    }
-
-    /**
-     * 获取MD5
-     *
-     * @param bytes 需要获取md5的bytes数组
-     * @param upper 返回结果是否转换成大写
-     * @return String 16进制文本
-     */
-    public static String getMd5(byte[] bytes, boolean upper) {
-        try {
-            MessageDigest messageDigest = MessageDigest.getInstance("MD5");
-            return ConvertUtils.bytesToHex(messageDigest.digest(bytes), upper);
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
 
 
 
