@@ -25,9 +25,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72c1ea27-e915-48ec-8c25-e9953ee245dc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/jamiexu/utils/encryption/UnicodeUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/jamiexu/utils/encryption/Base64Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jamiexu/utils/encryption/Base64Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/jamiexu/utils/encryption/CRC32Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jamiexu/utils/encryption/CRC32Utils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/jamiexu/utils/encryption/EncryptionUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jamiexu/utils/encryption/EncryptionUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/jamiexu/utils/encryption/MD5Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jamiexu/utils/encryption/MD5Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/jamiexu/utils/encryption/ShaUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jamiexu/utils/encryption/ShaUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,7 +173,7 @@
       <workItem from="1599009623871" duration="11360000" />
       <workItem from="1599113080506" duration="1131000" />
       <workItem from="1599217409949" duration="12000000" />
-      <workItem from="1599265700147" duration="10557000" />
+      <workItem from="1599265700147" duration="11279000" />
     </task>
     <servers />
   </component>

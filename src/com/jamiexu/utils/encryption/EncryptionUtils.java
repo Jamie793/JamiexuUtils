@@ -64,39 +64,6 @@ public class EncryptionUtils {
         return null;
     }
 
-    /**
-     * 获取Sha1
-     *
-     * @param bytes 需要获取sha1的bytes数组
-     * @return byte[]
-     */
-    public static byte[] getSha1(byte[] bytes) {
-        try {
-            MessageDigest messageDigest = MessageDigest.getInstance("SHA-1");
-            return messageDigest.digest(bytes);
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
-    /**
-     * 获取Sha256
-     *
-     * @param bytes 需要获取sha256的bytes数组
-     * @param upper 返回结果是否转换成大写
-     * @return String 16进制文本
-     */
-    public static String getFileSha256(byte[] bytes, boolean upper) {
-        try {
-            MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
-            return ConvertUtils.bytesToHex(messageDigest.digest(bytes), upper);
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
 
 
 }
