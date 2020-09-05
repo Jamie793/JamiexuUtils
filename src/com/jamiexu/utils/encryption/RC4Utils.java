@@ -30,7 +30,6 @@ public class RC4Utils {
         return deFinal(data, key, Cipher.ENCRYPT_MODE);
     }
 
-
     /**
      * 解密
      *

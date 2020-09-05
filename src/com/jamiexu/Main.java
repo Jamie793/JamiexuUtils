@@ -47,10 +47,10 @@ public class Main {
         
 //        System.out.println(FileUtils.putString("c:\\users\\jamiexu\\desktop\\a.txt","rest"));
 //        System.out.println(FileUtils.getString("c:\\users\\jamiexu\\desktop\\a.txt"));
-        byte[] key = "123".getBytes();
+        byte[] key = "1230000000000000".getBytes();
         String[] keys = RsaUtils.genKeyPair();
-        RC4Utils.encryptFile("c:\\users\\jamiexu\\desktop\\a.txt","c:\\users\\jamiexu\\desktop\\b.txt",key);
-        RC4Utils.decryptFile("c:\\users\\jamiexu\\desktop\\b.txt","c:\\users\\jamiexu\\desktop\\bb.txt",key);
+        AesUtils.encryptFile("c:\\users\\jamiexu\\desktop\\a.txt","c:\\users\\jamiexu\\desktop\\b.txt",key);
+        AesUtils.decryptFile("c:\\users\\jamiexu\\desktop\\b.txt","c:\\users\\jamiexu\\desktop\\bb.txt",key);
 
     }
 
