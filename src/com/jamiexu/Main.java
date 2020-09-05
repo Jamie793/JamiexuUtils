@@ -1,8 +1,8 @@
 package com.jamiexu;
 
 
-import com.jamiexu.utils.encryption.DESUtils;
 import com.jamiexu.utils.encryption.ECCUtils;
+import com.jamiexu.utils.encryption.KeySpace;
 
 
 /**
@@ -35,11 +35,11 @@ public class Main {
 //        } catch (DexStringParseException e) {
 //            e.printStackTrace();
 //        }
-        byte[] key = "11111122".getBytes();
-        String[] keys = ECCUtils.genKeyPair();
-        byte[] en = ECCUtils.encrypt(key,keys[0]);
+        byte[] key = "的撒范德萨分技术大会给".getBytes();
+        KeySpace keysk = ECCUtils.genKeyPair();
+        byte[] en = ECCUtils.encrypt(key, keysk.getPublicKey());
         System.out.println(new String(en));
-//        System.out.println(new String(ECCUtils.decrypt(en,keys[1])));
+        System.out.println(new String(ECCUtils.decrypt(en, keysk.getPrivateKey())));
 
     }
 

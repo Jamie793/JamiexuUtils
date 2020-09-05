@@ -26,22 +26,21 @@ public class ECCUtils {
     /**
      * 生成公钥和私钥
      *
-     * @return String[]
+     * @return KeySpace
      */
-    public static String[] genKeyPair() {
-        String[] strings = new String[2];
+    public static KeySpace genKeyPair() {
         try {
             KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("EC");
-            keyPairGenerator.initialize(571,new SecureRandom());
+            keyPairGenerator.initialize(571, new SecureRandom());
             KeyPair keyPair = keyPairGenerator.genKeyPair();
             ECPublicKey ecPublicKey = (ECPublicKey) keyPair.getPublic();
             ECPrivateKey ecPrivateKey = (ECPrivateKey) keyPair.getPrivate();
-            strings[0] = ConvertUtils.bytesToHex(ecPublicKey.getEncoded());
-            strings[1] = ConvertUtils.bytesToHex(ecPrivateKey.getEncoded());
+            return new KeySpace(ConvertUtils.bytesToHex(ecPublicKey.getEncoded()),
+                    ConvertUtils.bytesToHex(ecPrivateKey.getEncoded()));
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
-        return strings;
+        return null;
     }
 
 
@@ -53,7 +52,17 @@ public class ECCUtils {
      * @return byte[]
      */
     public static byte[] encrypt(byte[] data, String publicKey) {
-        return doFinal(data, publicKey, Cipher.ENCRYPT_MODE);
+        try {
+            byte[] bytes = ConvertUtils.hexToBytes(publicKey);
+            ECPublicKey ecPublicKey = (ECPublicKey) KeyFactory.getInstance("EC").generatePublic(new X509EncodedKeySpec(bytes));
+            Cipher cipher = new NullCipher();
+            cipher.init(Cipher.ENCRYPT_MODE, ecPublicKey);
+            return cipher.doFinal(data);
+        } catch (InvalidKeySpecException | NoSuchAlgorithmException | InvalidKeyException | IllegalBlockSizeException
+                | BadPaddingException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 
@@ -65,20 +74,11 @@ public class ECCUtils {
      * @return byte[]
      */
     public static byte[] decrypt(byte[] data, String privateKey) {
-        return doFinal(data, privateKey, Cipher.DECRYPT_MODE);
-    }
-
-
-    private static byte[] doFinal(byte[] data, String key, int mode) {
         try {
-            byte[] bytes = ConvertUtils.hexToBytes(key);
-            ECPublicKey ecPublicKey = null;
-            if (mode == Cipher.ENCRYPT_MODE)
-                ecPublicKey = (ECPublicKey) KeyFactory.getInstance("EC").generatePublic(new X509EncodedKeySpec(bytes));
-            else
-                ecPublicKey = (ECPublicKey) KeyFactory.getInstance("EC").generatePublic(new PKCS8EncodedKeySpec(bytes));
+            byte[] bytes = ConvertUtils.hexToBytes(privateKey);
+            ECPrivateKey ecPrivateKey = (ECPrivateKey) KeyFactory.getInstance("EC").generatePrivate(new PKCS8EncodedKeySpec(bytes));
             Cipher cipher = new NullCipher();
-            cipher.init(mode, ecPublicKey);
+            cipher.init(Cipher.ENCRYPT_MODE, ecPrivateKey);
             return cipher.doFinal(data);
         } catch (InvalidKeySpecException | NoSuchAlgorithmException | InvalidKeyException | IllegalBlockSizeException
                 | BadPaddingException e) {
@@ -86,4 +86,5 @@ public class ECCUtils {
         }
         return null;
     }
+
 }
