@@ -5,6 +5,7 @@ import com.jamiexu.utils.android.dex.DexParser;
 import com.jamiexu.utils.android.dex.throwable.DexStringParseException;
 import com.jamiexu.utils.convert.ConvertUtils;
 import com.jamiexu.utils.encryption.AesUtils;
+import com.jamiexu.utils.encryption.DesUtils;
 import com.jamiexu.utils.encryption.RC4Utils;
 import com.jamiexu.utils.encryption.RsaUtils;
 import com.jamiexu.utils.file.FileUtils;
@@ -43,16 +44,11 @@ public class Main {
 //            dexParser.parse();
 //        } catch (DexStringParseException e) {
 //            e.printStackTrace();
-//        }\
-        
-//        System.out.println(FileUtils.putString("c:\\users\\jamiexu\\desktop\\a.txt","rest"));
-//        System.out.println(FileUtils.getString("c:\\users\\jamiexu\\desktop\\a.txt"));
-        byte[] key = "1230000000000000".getBytes();
-        String[] keys = RsaUtils.genKeyPair();
-        AesUtils.encryptFile("c:\\users\\jamiexu\\desktop\\a.txt","c:\\users\\jamiexu\\desktop\\b.txt",key);
-        AesUtils.decryptFile("c:\\users\\jamiexu\\desktop\\b.txt","c:\\users\\jamiexu\\desktop\\bb.txt",key);
+//        }
+        byte[] key = "11111122".getBytes();
+        DesUtils.encryptFile("c:\\users\\jamiexu\\desktop\\a.txt","c:\\users\\jamiexu\\desktop\\b.txt",key);
+        DesUtils.decryptFile("c:\\users\\jamiexu\\desktop\\b.txt","c:\\users\\jamiexu\\desktop\\bb.txt",key);
 
     }
-
 
 }
