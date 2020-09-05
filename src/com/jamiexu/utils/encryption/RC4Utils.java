@@ -70,25 +70,27 @@ public class RC4Utils {
 
     /**
      * RC4文件加解密
-     * @param inputPath 待加密文件路径
+     *
+     * @param inputPath  待加密文件路径
      * @param outputPath 加密后输出路径
-     * @param key 密钥
+     * @param key        密钥
      * @return boolean status
      */
-    public static boolean encryptFile(String inputPath,String outputPath,byte[] key){
-        return doFinal(inputPath,outputPath,key,Cipher.ENCRYPT_MODE);
+    public static boolean encryptFile(String inputPath, String outputPath, byte[] key) {
+        return doFinal(inputPath, outputPath, key, Cipher.ENCRYPT_MODE);
     }
 
 
     /**
      * RC4文件加解密
-     * @param inputPath 待解密文件路径
+     *
+     * @param inputPath  待解密文件路径
      * @param outputPath 解密后输出路径
-     * @param key 密钥
+     * @param key        密钥
      * @return boolean status
      */
-    public static boolean decryptFile(String inputPath,String outputPath,byte[] key){
-        return doFinal(inputPath,outputPath,key,Cipher.DECRYPT_MODE);
+    public static boolean decryptFile(String inputPath, String outputPath, byte[] key) {
+        return doFinal(inputPath, outputPath, key, Cipher.DECRYPT_MODE);
     }
 
 
@@ -97,8 +99,8 @@ public class RC4Utils {
      *
      * @param inputPath  待加密文件路径
      * @param outputPath 加密后输出路径
-     * @param key 密钥
-     * @param mode 模式
+     * @param key        密钥
+     * @param mode       模式
      * @return boolean status
      */
     private static boolean doFinal(String inputPath, String outputPath, byte[] key, int mode) {
@@ -120,11 +122,11 @@ public class RC4Utils {
             byte[] bytes = new byte[1024 * 8];
             int len;
             while ((len = fileInputStream.read(bytes)) != -1) {
-                fileOutputStream.write(cipher.update(bytes, 0, len));
+                fileOutputStream.write(cipher.doFinal(bytes, 0, len));
             }
             status = new File(outputPath).exists();
-        } catch (NoSuchAlgorithmException | InvalidKeyException
-                | NoSuchPaddingException | IOException e) {
+        } catch (NoSuchAlgorithmException | InvalidKeyException | NoSuchPaddingException | IOException
+                | IllegalBlockSizeException | BadPaddingException e) {
             e.printStackTrace();
         } finally {
             if (fileInputStream != null) {
