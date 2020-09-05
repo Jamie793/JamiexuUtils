@@ -2,6 +2,7 @@ package com.jamiexu;
 
 
 import com.jamiexu.utils.encryption.DESUtils;
+import com.jamiexu.utils.encryption.ECCUtils;
 
 
 /**
@@ -35,8 +36,10 @@ public class Main {
 //            e.printStackTrace();
 //        }
         byte[] key = "11111122".getBytes();
-        DESUtils.encryptFile("c:\\users\\jamiexu\\desktop\\a.txt","c:\\users\\jamiexu\\desktop\\b.txt",key);
-        DESUtils.decryptFile("c:\\users\\jamiexu\\desktop\\b.txt","c:\\users\\jamiexu\\desktop\\bb.txt",key);
+        String[] keys = ECCUtils.genKeyPair();
+        byte[] en = ECCUtils.encrypt(key,keys[0]);
+        System.out.println(new String(en));
+//        System.out.println(new String(ECCUtils.decrypt(en,keys[1])));
 
     }
 

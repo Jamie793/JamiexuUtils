@@ -25,139 +25,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72c1ea27-e915-48ec-8c25-e9953ee245dc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/encryption/AESUtils.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/encryption/Base64Utils.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/encryption/CRC32Utils.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/encryption/DESUtils.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/encryption/MD5Utils.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/encryption/RC4Utils.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/encryption/SHAUtils.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/encryption/URLUtils.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/encryption/UnicodeUtils.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/allclasses-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/allclasses-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/allclasses-noframe.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/allclasses-noframe.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/Main.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/Main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/annotation/CallSuperProcessor.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/annotation/CallSuperProcessor.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/annotation/ForceCallSuper.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/annotation/ForceCallSuper.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/annotation/PublicFinal.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/annotation/PublicFinal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/annotation/PublicFinalProcessor.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/annotation/PublicFinalProcessor.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/annotation/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/annotation/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/annotation/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/annotation/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/annotation/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/annotation/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/DexClass.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/DexClass.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/DexField.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/DexField.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/DexHeader.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/DexHeader.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/DexMethod.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/DexMethod.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/DexParser.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/DexParser.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/DexProto.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/DexProto.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/DexString.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/DexString.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/DexType.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/DexType.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/DexUtils.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/DexUtils.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/base/BaseDexParse.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/base/BaseDexParse.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/base/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/base/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/base/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/base/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/base/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/base/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/io/DexDataOutputStream.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/io/DexDataOutputStream.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/io/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/io/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/io/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/io/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/io/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/io/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/item/ClassDefItem.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/item/ClassDefItem.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/item/FieldItem.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/item/FieldItem.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/item/MethodItem.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/item/MethodItem.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/item/ProtoIDItem.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/item/ProtoIDItem.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/item/StringDataItem.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/item/StringDataItem.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/item/TypeIDItem.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/item/TypeIDItem.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/item/TypeItem.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/item/TypeItem.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/item/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/item/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/item/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/item/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/item/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/item/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/throwable/DexStringParseException.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/throwable/DexStringParseException.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/throwable/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/throwable/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/throwable/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/throwable/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/throwable/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/dex/throwable/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/elf/ElfHeader.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/elf/ElfHeader.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/elf/ElfParserUtils.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/elf/ElfParserUtils.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/elf/ProgramHeader.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/elf/ProgramHeader.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/elf/SectionHeader.Section.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/elf/SectionHeader.Section.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/elf/SectionHeader.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/elf/SectionHeader.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/elf/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/elf/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/elf/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/elf/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/elf/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/android/elf/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/convert/ByteUtils.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/convert/ByteUtils.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/convert/ConvertUtils.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/convert/ConvertUtils.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/convert/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/convert/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/convert/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/convert/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/convert/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/convert/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/encryption/EncryptionUtils.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/encryption/EncryptionUtils.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/encryption/RsaUtils.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/encryption/RsaUtils.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/encryption/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/encryption/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/encryption/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/encryption/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/encryption/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/encryption/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/file/FileChannelUtils.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/file/FileChannelUtils.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/file/FileUtils.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/file/FileUtils.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/file/ZipUtils.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/file/ZipUtils.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/file/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/file/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/file/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/file/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/file/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/file/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/http/HttpResponse.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/http/HttpResponse.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/http/HttpUtils.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/http/HttpUtils.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/http/IHttpListener.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/http/IHttpListener.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/http/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/http/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/http/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/http/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/http/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/http/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/reflect/ReflectUtils.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/reflect/ReflectUtils.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/reflect/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/reflect/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/reflect/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/reflect/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/reflect/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/com/jamiexu/utils/reflect/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/constant-values.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/constant-values.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/deprecated-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/deprecated-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/help-doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/help-doc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-10.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-10.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-11.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-11.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-12.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-12.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-13.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-13.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-14.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-14.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-15.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-15.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-16.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-16.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-17.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-17.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-18.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-18.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-19.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-19.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-20.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-20.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-21.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-21.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-22.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-22.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-23.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-23.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-24.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-24.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-3.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-4.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-5.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-5.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-6.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-6.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-7.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-7.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-8.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-8.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-9.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-9.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/org/json/JSON.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/org/json/JSON.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/org/json/JSONArray.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/org/json/JSONArray.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/org/json/JSONException.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/org/json/JSONException.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/org/json/JSONObject.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/org/json/JSONObject.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/org/json/JSONStringer.Scope.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/org/json/JSONStringer.Scope.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/org/json/JSONStringer.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/org/json/JSONStringer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/org/json/JSONTokener.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/org/json/JSONTokener.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/org/json/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/org/json/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/org/json/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/org/json/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/org/json/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/org/json/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/overview-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/overview-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/overview-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/overview-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/overview-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/serialized-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/serialized-form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jamiexu/utils/http/HttpUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jamiexu/utils/http/HttpUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/jamiexu/utils/encryption/ECCUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/android/dex/DexUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/android/dex/DexUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/encryption/AesUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/encryption/AesUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/encryption/DesUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/encryption/DesUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/encryption/EncryptionUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/encryption/EncryptionUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/encryption/RsaUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/encryption/RsaUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/file/FileChannelUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/file/FileChannelUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/file/FileUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/file/FileUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/http/HttpResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/http/HttpResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/http/HttpUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JamiexuUtils/com/jamiexu/utils/http/HttpUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/jamiexu/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jamiexu/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/jamiexu/utils/android/dex/DexUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jamiexu/utils/android/dex/DexUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/jamiexu/utils/file/FileChannelUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jamiexu/utils/file/FileChannelUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/jamiexu/utils/http/HttpResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jamiexu/utils/http/HttpResponse.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -300,7 +183,7 @@
       <workItem from="1599009623871" duration="11360000" />
       <workItem from="1599113080506" duration="1131000" />
       <workItem from="1599217409949" duration="12000000" />
-      <workItem from="1599265700147" duration="13081000" />
+      <workItem from="1599265700147" duration="21280000" />
     </task>
     <servers />
   </component>
@@ -335,10 +218,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="736" y="413" width="447" height="221" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040@0.0.1920.1040" timestamp="1597408858863" />
-    <state x="706" y="259" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1599286451797">
+    <state x="706" y="259" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1599286480742">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="706" y="259" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1599286451797" />
+    <state x="706" y="259" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1599286480742" />
     <state x="706" y="259" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040@0.0.1920.1040" timestamp="1597380038120" />
     <state x="695" y="406" key="DetectedRootsChooserDialog" timestamp="1598950182805">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -349,42 +232,42 @@
     </state>
     <state x="739" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1599011997678" />
     <state x="739" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1597517382394" />
-    <state width="1877" height="264" key="GridCell.Tab.0.bottom" timestamp="1599286451969">
+    <state width="1877" height="264" key="GridCell.Tab.0.bottom" timestamp="1599308703366">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="264" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1599286451969" />
+    <state width="1877" height="264" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1599308703366" />
     <state width="1877" height="277" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1597518922605" />
-    <state width="1877" height="264" key="GridCell.Tab.0.center" timestamp="1599286451968">
+    <state width="1877" height="264" key="GridCell.Tab.0.center" timestamp="1599308703366">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="264" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1599286451968" />
+    <state width="1877" height="264" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1599308703366" />
     <state width="1877" height="277" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1597518922605" />
-    <state width="1877" height="264" key="GridCell.Tab.0.left" timestamp="1599286451968">
+    <state width="1877" height="264" key="GridCell.Tab.0.left" timestamp="1599308703366">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="264" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1599286451968" />
+    <state width="1877" height="264" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1599308703366" />
     <state width="1877" height="277" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1597518922605" />
-    <state width="1877" height="264" key="GridCell.Tab.0.right" timestamp="1599286451968">
+    <state width="1877" height="264" key="GridCell.Tab.0.right" timestamp="1599308703366">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="264" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1599286451968" />
+    <state width="1877" height="264" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1599308703366" />
     <state width="1877" height="277" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1597518922605" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1598942763007">
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1599308480664">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1598942763007" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1598942763007">
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1599308480664" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1599308480664">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1598942763007" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1598942763007">
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1599308480664" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1599308480664">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1598942763007" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1598942763007">
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1599308480664" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1599308480664">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1598942763007" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1599308480664" />
     <state x="392" y="116" width="1233" height="870" key="SettingsEditor" timestamp="1599270209235">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

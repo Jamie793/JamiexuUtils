@@ -3,7 +3,9 @@ package com.jamiexu.utils.android.dex;
 import com.jamiexu.utils.convert.ByteUtils;
 import com.jamiexu.utils.convert.ConvertUtils;
 import com.jamiexu.utils.encryption.EncryptionUtils;
+import com.jamiexu.utils.encryption.SHAUtils;
 import com.jamiexu.utils.file.FileUtils;
+import sun.security.provider.SHA;
 
 import java.util.ArrayList;
 
@@ -33,7 +35,7 @@ public class DexUtils {
      */
     public static boolean verifySignature(byte[] src) {
         byte[] bytes = ByteUtils.copyBytes(src, 32, src.length - 32);
-        bytes = EncryptionUtils.getSha1(bytes);
+        bytes = SHAUtils.getSha1(bytes);
         String hex = ConvertUtils.bytesToHex(bytes).toUpperCase();
         byte[] signature = new byte[20];
         System.arraycopy(src, 12, signature, 0, 20);
@@ -65,7 +67,7 @@ public class DexUtils {
      */
     public static void calcSignature(byte[] src) {
         byte[] bytes = ByteUtils.copyBytes(src, 32, src.length - 32);
-        bytes = EncryptionUtils.getSha1(bytes);
+        bytes = SHAUtils.getSha1(bytes);
         byte[] newBytes = new byte[20];
         for (int i = bytes.length - 1; i >= 0; i--) {
             newBytes[20 - i - 1] = bytes[i];

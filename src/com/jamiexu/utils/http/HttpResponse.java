@@ -3,10 +3,10 @@ package com.jamiexu.utils.http;
 import java.util.HashMap;
 
 public class HttpResponse {
-    private String body;
-    private HashMap<String,String> hashMap_headers;
-    private String cookie;
-    private int code;
+    private final String body;
+    private final HashMap<String,String> hashMap_headers;
+    private final String cookie;
+    private final int code;
 
     public HttpResponse(String body, HashMap<String, String> hashMap_headers, String cookie, int code) {
         this.body = body;
@@ -18,7 +18,6 @@ public class HttpResponse {
     public String getBody() {
         return body;
     }
-
 
     public HashMap<String, String> getHeaders() {
         return hashMap_headers;
