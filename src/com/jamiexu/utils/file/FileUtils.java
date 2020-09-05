@@ -2,6 +2,7 @@ package com.jamiexu.utils.file;
 
 import com.jamiexu.utils.convert.ByteUtils;
 import com.jamiexu.utils.convert.ConvertUtils;
+import com.jamiexu.utils.encryption.MD5Utils;
 
 import java.io.*;
 import java.security.MessageDigest;
@@ -109,18 +110,16 @@ public class FileUtils {
         return stringBuilder.length() > 0 ? stringBuilder.toString() : null;
     }
 
-
     /**
      * 获取指定行的文本内容
      *
      * @param path 文件路径
      * @param line 行号
-     * @return
+     * @return String
      */
     public static String getLineString(String path, int line) {
         return getLinesString(path, line, line);
     }
-
 
     /**
      * 写出文本文件
@@ -181,7 +180,6 @@ public class FileUtils {
         }
         return status;
     }
-
 
     /**
      * 读取二进制文件
@@ -244,7 +242,7 @@ public class FileUtils {
                 fileOutputStream.write(bytes, 0, len);
             }
             if (new File(to).exists())
-                if (Objects.equals(FileUtils.getFileMd5(from, false), FileUtils.getFileMd5(to, false)))
+                if (Objects.equals(MD5Utils.getFileMd5(from, false), MD5Utils.getFileMd5(to, false)))
                     status = true;
         } catch (IOException e) {
             e.printStackTrace();
@@ -289,234 +287,6 @@ public class FileUtils {
             }
         }
         return new File(path).delete();
-    }
-
-    /**
-     * 获取文件MD5
-     *
-     * @param path  文件路径
-     * @param upper 返回结果是否转换成大写
-     * @return String 16进制文本
-     */
-    public static String getFileMd5(String path, boolean upper) {
-        FileInputStream fileInputStream = null;
-        try {
-            fileInputStream = new FileInputStream(path);
-            MessageDigest messageDigest = MessageDigest.getInstance("MD5");
-            byte[] bytes = new byte[1024 * 8];
-            int len = -1;
-            while ((len = fileInputStream.read(bytes, 0, bytes.length)) != -1) {
-                messageDigest.update(bytes, 0, len);
-            }
-            return ConvertUtils.bytesToHex(messageDigest.digest(), upper);
-        } catch (NoSuchAlgorithmException | IOException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
-
-    /**
-     * 获取文件MD5默认结果为小写
-     *
-     * @param path 文件路径
-     * @return String 16进制文本
-     */
-    public static String getFileMd5(String path) {
-        FileInputStream fileInputStream = null;
-        try {
-            fileInputStream = new FileInputStream(path);
-            MessageDigest messageDigest = MessageDigest.getInstance("MD5");
-            byte[] bytes = new byte[1024 * 8];
-            int len = -1;
-            while ((len = fileInputStream.read(bytes, 0, bytes.length)) != -1) {
-                messageDigest.update(bytes, 0, len);
-            }
-            return ConvertUtils.bytesToHex(messageDigest.digest(), false);
-        } catch (NoSuchAlgorithmException | IOException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
-
-    /**
-     * 获取文件Sha1
-     *
-     * @param path  文件路径
-     * @param upper 返回结果是否转换成大写
-     * @return String 16进制文本
-     */
-    public static String getFileSha1(String path, boolean upper) {
-        FileInputStream fileInputStream = null;
-        try {
-            fileInputStream = new FileInputStream(path);
-            MessageDigest messageDigest = MessageDigest.getInstance("SHA-1");
-            byte[] bytes = new byte[1024 * 8];
-            int len = -1;
-            while ((len = fileInputStream.read(bytes, 0, bytes.length)) != -1) {
-                messageDigest.update(bytes, 0, len);
-            }
-            return ConvertUtils.bytesToHex(messageDigest.digest(), upper);
-        } catch (NoSuchAlgorithmException | IOException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
-
-    /**
-     * 获取文件Sha1默认结果为小写
-     *
-     * @param path 文件路径
-     * @return String 16进制文本
-     */
-    public static String getFileSha1(String path) {
-        FileInputStream fileInputStream = null;
-        try {
-            fileInputStream = new FileInputStream(path);
-            MessageDigest messageDigest = MessageDigest.getInstance("SHA-1");
-            byte[] bytes = new byte[1024 * 8];
-            int len = -1;
-            while ((len = fileInputStream.read(bytes, 0, bytes.length)) != -1) {
-                messageDigest.update(bytes, 0, len);
-            }
-            return ConvertUtils.bytesToHex(messageDigest.digest(), false);
-        } catch (NoSuchAlgorithmException | IOException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
-
-    /**
-     * 获取文件Sha256
-     *
-     * @param path  文件路径
-     * @param upper 返回结果是否转换成大写
-     * @return String 16进制文本
-     */
-    public static String getFileSha256(String path, boolean upper) {
-        FileInputStream fileInputStream = null;
-        try {
-            fileInputStream = new FileInputStream(path);
-            MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
-            byte[] bytes = new byte[1024 * 8];
-            int len = -1;
-            while ((len = fileInputStream.read(bytes, 0, bytes.length)) != -1) {
-                messageDigest.update(bytes, 0, len);
-            }
-            return ConvertUtils.bytesToHex(messageDigest.digest(), upper);
-        } catch (NoSuchAlgorithmException | IOException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
-
-    /**
-     * 获取文件Sha256默认结果为小写
-     *
-     * @param path 文件路径
-     * @return String 16进制文本
-     */
-    public static String getFileSha256(String path) {
-        FileInputStream fileInputStream = null;
-        try {
-            fileInputStream = new FileInputStream(path);
-            MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
-            byte[] bytes = new byte[1024 * 8];
-            int len = -1;
-            while ((len = fileInputStream.read(bytes, 0, bytes.length)) != -1) {
-                messageDigest.update(bytes, 0, len);
-            }
-            return ConvertUtils.bytesToHex(messageDigest.digest(), false);
-        } catch (NoSuchAlgorithmException | IOException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
-
-    /**
-     * 获取文件CRC32
-     *
-     * @param path 文件路径
-     * @return Long
-     */
-    public static long getFileCrc32(String path) {
-        FileInputStream fileInputStream = null;
-        try {
-            fileInputStream = new FileInputStream(path);
-            CRC32 crc32 = new CRC32();
-            byte[] bytes = new byte[1024 * 8];
-            int len = -1;
-            while ((len = fileInputStream.read(bytes, 0, bytes.length)) != -1) {
-                crc32.update(bytes, 0, len);
-            }
-            return crc32.getValue();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return -1;
-    }
-
-
-    /**
-     * 获取文件Base64,并把编码数据写出
-     *
-     * @param path   文件路径
-     * @param target 写出编码后数据文件路径
-     * @return boolean 状态
-     */
-    public static boolean getFileBase64AndWrite(String path, String target) {
-        boolean status = false;
-        Base64.Encoder encoder = Base64.getEncoder();
-        FileInputStream fileInputStream = null;
-        PrintWriter printWriter = null;
-        try {
-            fileInputStream = new FileInputStream(path);
-            printWriter = new PrintWriter(new FileOutputStream(target));
-            byte[] byts = new byte[1024 * 8];
-            int len;
-            while ((len = fileInputStream.read(byts)) != -1) {
-                if (len != byts.length) {
-                    byte[] copy = ByteUtils.copyBytes(byts, 0, len);
-                    printWriter.println(encoder.encodeToString(copy));
-                } else {
-                    printWriter.println(encoder.encodeToString(byts));
-                }
-            }
-            if (new File(target).exists())
-                status = true;
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            if (fileInputStream != null) {
-                try {
-                    fileInputStream.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-
-            if (printWriter != null) {
-                printWriter.flush();
-                printWriter.close();
-            }
-        }
-        return status;
-    }
-
-
-    /**
-     * 获取小文件的Base64并返回结果
-     *
-     * @param path 待获取文件路径
-     * @return String 结果
-     */
-    public static String getSmallFileBase64(String path) {
-        return Base64.getEncoder().encodeToString(readFile(path));
     }
 
     /**
@@ -570,50 +340,6 @@ public class FileUtils {
     public static boolean renameFile(String path, String name) {
         File file = new File(path);
         return file.renameTo(new File(file.getParent() + "/" + name));
-    }
-
-    /**
-     * 验证文件md5
-     *
-     * @param path 文件路径
-     * @param md5  md5值大小写都行
-     * @return boolean 返回布尔值
-     */
-    public static boolean checkFileMd5(String path, String md5) {
-        return Objects.equals(getFileMd5(path, true), md5.toUpperCase());
-    }
-
-    /**
-     * 验证文件sha1
-     *
-     * @param path 文件路径
-     * @param sha1 sha1
-     * @return boolean 返回布尔值
-     */
-    public static boolean checkFileSha1(String path, String sha1) {
-        return Objects.equals(getFileSha1(path, true), sha1.toUpperCase());
-    }
-
-    /**
-     * 验证文件crc32
-     *
-     * @param path  文件路径
-     * @param crc32 crc32
-     * @return boolean 返回布尔值
-     */
-    public static boolean checkFileCrc32(String path, long crc32) {
-        return getFileCrc32(path) == crc32;
-    }
-
-    /**
-     * 验证文件sha256
-     *
-     * @param path   文件路径
-     * @param sha256 sha256
-     * @return boolean 返回布尔值
-     */
-    public static boolean checkFileSha256(String path, String sha256) {
-        return Objects.equals(getFileSha256(path, true), sha256.toUpperCase());
     }
 
 
