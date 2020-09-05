@@ -4,6 +4,7 @@ package com.jamiexu;
 import com.jamiexu.utils.android.dex.DexParser;
 import com.jamiexu.utils.android.dex.throwable.DexStringParseException;
 import com.jamiexu.utils.convert.ConvertUtils;
+import com.jamiexu.utils.encryption.AesUtils;
 import com.jamiexu.utils.encryption.RsaUtils;
 import com.jamiexu.utils.file.FileUtils;
 import sun.reflect.misc.FieldUtil;
@@ -30,6 +31,8 @@ public class Main {
 
 
     public static void a(String a, int b, char c, boolean d, Boolean e, CharSequence f) {
+
+
     }
 
 
@@ -39,9 +42,11 @@ public class Main {
 //            dexParser.parse();
 //        } catch (DexStringParseException e) {
 //            e.printStackTrace();
-//        }
+//        }\
+        
 //        System.out.println(FileUtils.putString("c:\\users\\jamiexu\\desktop\\a.txt","rest"));
 //        System.out.println(FileUtils.getString("c:\\users\\jamiexu\\desktop\\a.txt"));
+
 
     }
 

@@ -25,25 +25,12 @@ import java.util.zip.Checksum;
  */
 
 public class EncryptionUtils {
-    /**
-     * Aes加解密
-     *
-     * @param bytes 需要加解密的数据
-     * @param pass  加解密密钥
-     * @param mode  1加密，2解密
-     * @return byte[] 加密后的数据
-     */
-    public static byte[] enAes(byte[] bytes, byte[] pass, int mode) {
-        try {
-            KeyGenerator keygen = KeyGenerator.getInstance("AES");
-            SecretKeySpec key = new SecretKeySpec(pass, "AES");
-            Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
-            cipher.init(mode, key);
-            return cipher.doFinal(bytes);
-        } catch (Throwable e) {
-            e.printStackTrace();
-        }
-        return null;
+
+
+    public static long getAlder32(byte[] bytes){
+        Checksum checksumEngine = new Adler32();
+        checksumEngine.update(bytes,0,bytes.length);
+        return checksumEngine.getValue();
     }
 
 
@@ -69,14 +56,6 @@ public class EncryptionUtils {
         }
         return null;
     }
-
-
-    public static long getAlder32(byte[] bytes){
-        Checksum checksumEngine = new Adler32();
-        checksumEngine.update(bytes,0,bytes.length);
-        return checksumEngine.getValue();
-    }
-
 
     /**
      * URL编码
