@@ -242,7 +242,7 @@ public class FileUtils {
                 fileOutputStream.write(bytes, 0, len);
             }
             if (new File(to).exists())
-                if (Objects.equals(MD5Utils.getFileMd5(from, false), MD5Utils.getFileMd5(to, false)))
+                if (Objects.equals(MD5Utils.getFileMD5(from, false), MD5Utils.getFileMD5(to, false)))
                     status = true;
         } catch (IOException e) {
             e.printStackTrace();

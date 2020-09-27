@@ -49,7 +49,7 @@ public class FileChannelUtils {
                 byteBuffer.clear();
             }
             if (new File(to).exists())
-                if (Objects.equals(MD5Utils.getFileMd5(from, false), MD5Utils.getFileMd5(to, false)))
+                if (Objects.equals(MD5Utils.getFileMD5(from, false), MD5Utils.getFileMD5(to, false)))
                     status = true;
 
         } catch (Throwable e) {
@@ -107,7 +107,7 @@ public class FileChannelUtils {
             fileChannel1 = FileChannel.open(Paths.get(to), StandardOpenOption.READ, StandardOpenOption.WRITE, StandardOpenOption.CREATE);
             fileChannel1.transferFrom(fileChannel, 0, fileChannel.size());
             if (new File(to).exists())
-                if (Objects.equals(MD5Utils.getFileMd5(from, false), MD5Utils.getFileMd5(to, false)))
+                if (Objects.equals(MD5Utils.getFileMD5(from, false), MD5Utils.getFileMD5(to, false)))
                     status = true;
         } catch (IOException e) {
             e.printStackTrace();
@@ -157,7 +157,7 @@ public class FileChannelUtils {
             mappedByteBuffer1.put(bytes);
 
             if (new File(to).exists())
-                if (Objects.equals(MD5Utils.getFileMd5(from, false), MD5Utils.getFileMd5(to, false)))
+                if (Objects.equals(MD5Utils.getFileMD5(from, false), MD5Utils.getFileMD5(to, false)))
                     status = true;
 
         } catch (IOException e) {

@@ -57,25 +57,27 @@ public class AESUtils {
 
     /**
      * 加密文件按
-     * @param path 待加密文件路径
+     *
+     * @param path  待加密文件路径
      * @param path2 解密后文件路径
-     * @param key 密钥
+     * @param key   密钥
      * @return boolean 状态
      */
-    public static boolean encryptFile(String path,String path2,byte[] key){
-        return doFianl(path,path2,key,Cipher.ENCRYPT_MODE);
+    public static boolean encryptFile(String path, String path2, byte[] key) {
+        return doFianl(path, path2, key, Cipher.ENCRYPT_MODE);
     }
 
 
     /**
      * 解密文件按
-     * @param path 待解密文件路径
+     *
+     * @param path  待解密文件路径
      * @param path2 加密后文件路径
-     * @param key 密钥
+     * @param key   密钥
      * @return boolean 状态
      */
-    public static boolean decryptFile(String path,String path2,byte[] key){
-        return doFianl(path,path2,key,Cipher.DECRYPT_MODE);
+    public static boolean decryptFile(String path, String path2, byte[] key) {
+        return doFianl(path, path2, key, Cipher.DECRYPT_MODE);
     }
 
 
@@ -100,10 +102,11 @@ public class AESUtils {
 
     /**
      * 加秘密文件
-     * @param path 待处理文件路径
+     *
+     * @param path  待处理文件路径
      * @param path2 处理后文件路径
-     * @param key 密钥
-     * @param mode 模式
+     * @param key   密钥
+     * @param mode  模式
      * @return boolean 状态
      */
     private static boolean doFianl(String path, String path2, byte[] key, int mode) {
@@ -116,16 +119,16 @@ public class AESUtils {
             cipher.init(mode, secretKeySpec);
             fileInputStream = new FileInputStream(path);
             fileOutputStream = new FileOutputStream(path2);
-            byte[] byt = new byte[1024*8];
+            byte[] byt = new byte[1024 * 8];
             int len;
-            while((len = fileInputStream.read(byt))!=-1){
-                fileOutputStream.write(cipher.doFinal(byt,0,len));
+            while ((len = fileInputStream.read(byt)) != -1) {
+                fileOutputStream.write(cipher.doFinal(byt, 0, len));
             }
             status = new File(path2).exists();
         } catch (Throwable e) {
             e.printStackTrace();
-        }finally {
-            if(fileInputStream != null){
+        } finally {
+            if (fileInputStream != null) {
                 try {
                     fileInputStream.close();
                 } catch (IOException e) {
@@ -133,7 +136,7 @@ public class AESUtils {
                 }
             }
 
-            if(fileOutputStream != null){
+            if (fileOutputStream != null) {
                 try {
                     fileOutputStream.flush();
                     fileInputStream.close();
